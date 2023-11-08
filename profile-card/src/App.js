@@ -1,22 +1,33 @@
 import React from "react";
 import { ReactDOM } from "react-dom/client";
+import "./app.css";
 
 function App() {
-    return <Box />;
+    return (
+        <div className="container">
+            <Box />
+        </div>
+    );
 }
 
 function Box() {
     return (
-        <div>
+        <div className="box">
             <img src="images/huu4ko.jpg" alt="me" />
             <Infos />
+            <div className="skills">
+                <Skill />
+                <Skill />
+                <Skill />
+                <Skill />
+            </div>
         </div>
     );
 }
 
 function Infos() {
     return (
-        <div>
+        <div className="infos">
             <h2>Mohammad Parsa Norouzi</h2>
             <p>
                 front-end web developer and Deutsch teacher. When not coding, I
@@ -28,9 +39,9 @@ function Infos() {
 
 function Skill() {
     return (
-        <div>
+        <div className="skill">
             <h4>blabla</h4>
-            <span>sticker</span>
+            <span>🤠</span>
         </div>
     );
 }
