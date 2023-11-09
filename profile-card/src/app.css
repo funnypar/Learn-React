@@ -13,12 +13,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(131, 58, 180);
-    background: linear-gradient(
-        90deg,
-        rgba(131, 58, 180, 1) 0%,
-        rgba(253, 29, 29, 1) 50%,
-        rgba(252, 176, 69, 1) 100%
+    background-image: linear-gradient(
+        to right top,
+        #d16ba5,
+        #c777b9,
+        #ba83ca,
+        #aa8fd8,
+        #9a9ae1,
+        #8aa7ec,
+        #79b3f4,
+        #69bff8,
+        #52cffe,
+        #41dfff,
+        #46eefa,
+        #5ffbf1
     );
 }
 .box {
@@ -27,6 +35,9 @@
     background: rgba(255, 255, 255, 1);
     border: 2px solid black;
     border-radius: 0.5rem;
+    box-shadow: 14px 14px 33px -4px rgba(0, 0, 0, 0.36);
+    -webkit-box-shadow: 14px 14px 33px -4px rgba(0, 0, 0, 0.36);
+    -moz-box-shadow: 14px 14px 33px -4px rgba(0, 0, 0, 0.36);
 }
 
 .box img {
@@ -53,12 +64,16 @@
     gap: 0.5rem;
 }
 .skill {
-    width: fit-content;
     display: flex;
     gap: 0.5rem;
     cursor: pointer;
     background-color: blueviolet;
     font-family: "Kalam", cursive;
     padding: 0.25rem 1rem;
-    border-radius: 1rem;
+    border-radius: 0.75rem;
+}
+
+.skill:hover {
+    transform: scale(1.05);
+    transition: all 0.3s;
 }

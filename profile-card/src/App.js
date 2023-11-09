@@ -1,5 +1,4 @@
 import React from "react";
-import { ReactDOM } from "react-dom/client";
 import "./app.css";
 
 function App() {
@@ -16,10 +15,11 @@ function Box() {
             <img src="images/huu4ko.jpg" alt="me" />
             <Infos />
             <div className="skills">
-                <Skill />
-                <Skill />
-                <Skill />
-                <Skill />
+                <Skill skill={"HTML+CSS"} sticker={"👊"} color={"#E6C229"} />
+                <Skill skill={"Javascript"} sticker={"👑"} color={"#F17105"} />
+                <Skill skill={"Python"} sticker={"😍"} color={"#6610F2"} />
+                <Skill skill={"LPIC"} sticker={"👻"} color={"#1A8FE3"} />
+                <Skill skill={"React"} sticker={"💣"} color={"#92FF5A"} />
             </div>
         </div>
     );
@@ -37,11 +37,11 @@ function Infos() {
     );
 }
 
-function Skill() {
+function Skill(props) {
     return (
-        <div className="skill">
-            <h4>HTMLadadasd</h4>
-            <span>🤠</span>
+        <div className="skill" style={{ backgroundColor: props.color }}>
+            <h4>{props.skill}</h4>
+            <span>{props.sticker}</span>
         </div>
     );
 }
