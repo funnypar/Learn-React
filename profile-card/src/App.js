@@ -40,7 +40,7 @@ function Infos() {
 function Skill() {
     return (
         <div className="skill">
-            <h4>blabla</h4>
+            <h4>HTMLadadasd</h4>
             <span>🤠</span>
         </div>
     );

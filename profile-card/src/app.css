@@ -38,21 +38,25 @@
     flex-direction: column;
 }
 .infos h2 {
+    padding: 0.5rem 0;
     font-family: "Agbalumo", sans-serif;
 }
 
 .infos p {
+    width: 90%;
     font-family: "Dosis", sans-serif;
 }
 .skills {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0.5rem 0rem;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    gap: 0.5rem;
 }
 .skill {
     width: fit-content;
     display: flex;
     gap: 0.5rem;
+    cursor: pointer;
     background-color: blueviolet;
     font-family: "Kalam", cursive;
     padding: 0.25rem 1rem;
