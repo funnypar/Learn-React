@@ -91,10 +91,12 @@ function Footer() {
     return (
         <footer className="footer">
             <div className="order">
-                {isOpen && (
+                {isOpen ? (
                     <p>Now is 0{nowDate}:00 and We're currently open!</p>
+                ) : (
+                    <p>Now is 0{nowDate}:00 and we're colse!</p>
                 )}
-                <button className="btn">Order now!</button>
+                {isOpen ? <button className="btn">Order now!</button> : null}
             </div>
         </footer>
     );
