@@ -92,9 +92,9 @@ function Footer() {
         <footer className="footer">
             <div className="order">
                 {isOpen ? (
-                    <p>Now is 0{nowDate}:00 and We're currently open!</p>
+                    <p>Now is {nowDate}:00 and We're currently open!</p>
                 ) : (
-                    <p>Now is 0{nowDate}:00 and we're colse!</p>
+                    <p>Now is {nowDate}:00 and we're colse!</p>
                 )}
                 {isOpen ? <button className="btn">Order now!</button> : null}
             </div>
@@ -104,7 +104,7 @@ function Footer() {
 
 function Pizza(props) {
     return (
-        <div className="pizza">
+        <div className={`pizza ${props.data.soldOut ? "sold-out" : ""}`}>
             <img src={props.data.photoName} alt={props.data.name} />
             <h3>{props.data.name}</h3>
             <p>{props.data.ingredients}</p>
