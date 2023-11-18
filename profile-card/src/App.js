@@ -1,6 +1,14 @@
 import React from "react";
 import "./app.css";
 
+const DATABASE = [
+    { skill: "HTML+CSS", sticker: "👊", color: "#E6C229", id: 1 },
+    { skill: "Javascript", sticker: "👑", color: "#F17105", id: 2 },
+    { skill: "Python", sticker: "😍", color: "#6610F2", id: 3 },
+    { skill: "LPIC", sticker: "👻", color: "#1A8FE3", id: 4 },
+    { skill: "React", sticker: "💣", color: "#92FF5A", id: 5 },
+];
+
 function App() {
     return (
         <div className="container">
@@ -15,11 +23,9 @@ function Box() {
             <img src="images/huu4ko.jpg" alt="me" />
             <Infos />
             <div className="skills">
-                <Skill skill={"HTML+CSS"} sticker={"👊"} color={"#E6C229"} />
-                <Skill skill={"Javascript"} sticker={"👑"} color={"#F17105"} />
-                <Skill skill={"Python"} sticker={"😍"} color={"#6610F2"} />
-                <Skill skill={"LPIC"} sticker={"👻"} color={"#1A8FE3"} />
-                <Skill skill={"React"} sticker={"💣"} color={"#92FF5A"} />
+                {DATABASE.map((data) => (
+                    <Skill data={data} key={data.id} />
+                ))}
             </div>
         </div>
     );
@@ -37,11 +43,11 @@ function Infos() {
     );
 }
 
-function Skill(props) {
+function Skill({ data }) {
     return (
-        <div className="skill" style={{ backgroundColor: props.color }}>
-            <h4>{props.skill}</h4>
-            <span>{props.sticker}</span>
+        <div className="skill" style={{ backgroundColor: data.color }}>
+            <h4>{data.skill}</h4>
+            <span>{data.sticker}</span>
         </div>
     );
 }
