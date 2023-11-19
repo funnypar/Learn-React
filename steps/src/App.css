@@ -31,7 +31,9 @@ body {
     height: 30%;
     width: 60vw;
     display: flex;
+    padding: 1rem;
     flex-direction: column;
+    gap: 3rem;
     background: rgba(255, 255, 255, 0.16);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -43,7 +45,7 @@ body {
 .steps {
     height: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .steps li {
@@ -65,4 +67,29 @@ body {
 .active-step {
     background-color: rgba(0, 0, 0, 0.9) !important;
     transform: scale(1.1);
+}
+
+.texts {
+    align-self: center;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn {
+    padding: 0.5rem;
+    cursor: pointer;
+    border: none;
+    width: 10%;
+    border-radius: 3rem;
+    color: white;
+    background: hsl(240deg 100% 40%) 51%;
+    font-size: 0.9rem;
+}
+.btn:hover {
+    transform: scale(1.1);
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s;
 }

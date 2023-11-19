@@ -12,6 +12,11 @@ function Box() {
     return (
         <div className="box">
             <Steps />
+            <Texts />
+            <div className="btn-container">
+                <Btn text={"Next"} />
+                <Btn text={"Previous"} />
+            </div>
         </div>
     );
 }
@@ -33,11 +38,11 @@ function Steps() {
 }
 
 function Texts() {
-    return <h2></h2>;
+    return <h3 className="texts">Step 1: Learn React 👑</h3>;
 }
 
-function Btn() {
-    return <button></button>;
+function Btn({ text }) {
+    return <button className="btn">{text}</button>;
 }
 
 function Close() {
