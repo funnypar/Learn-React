@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-image: linear-gradient(
+        35deg,
+        hsl(240deg 100% 50%) 1%,
+        hsl(240deg 100% 48%) 43%,
+        hsl(240deg 100% 46%) 50%,
+        hsl(240deg 100% 44%) 51%,
+        hsl(240deg 100% 42%) 51%,
+        hsl(240deg 100% 40%) 49%,
+        hsl(240deg 100% 38%) 49%,
+        hsl(240deg 100% 36%) 50%,
+        hsl(240deg 100% 34%) 57%,
+        hsl(0deg 0% 0%) 99%
+    );
+    background-repeat: no-repeat;
+    color: white;
+}
