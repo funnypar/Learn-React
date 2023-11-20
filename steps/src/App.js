@@ -1,4 +1,17 @@
+import { useState } from "react";
 import "./App.css";
+
+const DATABASE = [
+    {
+        text: "Learn React 👑",
+    },
+    {
+        text: "Apply For Job ⛺",
+    },
+    {
+        text: "Earn Money 💰",
+    },
+];
 
 function App() {
     return (
@@ -10,40 +23,51 @@ function App() {
 }
 
 function Box() {
+    const [step, setStep] = useState(1);
+    // Handlers
+    function nextHandler() {
+        step < 3 && setStep(step + 1);
+    }
+    function prevHandler() {
+        step > 1 && setStep(step - 1);
+    }
+
     return (
         <div className="box">
-            <Steps />
-            <Texts />
+            <Steps step={step} />
+            <Texts step={step} />
             <div className="btn-container">
-                <Btn text={"Next"} />
-                <Btn text={"Previous"} />
+                <button className="btn" onClick={prevHandler}>
+                    Previous
+                </button>
+                <button className="btn" onClick={nextHandler}>
+                    Next
+                </button>
             </div>
         </div>
     );
 }
 
-function Steps() {
+function Steps({ step }) {
     return (
         <ul className="steps">
-            <li className="active-step">
+            <li className={step >= 1 ? `active-step` : ""}>
                 <a href="#">1</a>
             </li>
-            <li>
+            <li className={step >= 2 ? `active-step` : ""}>
                 <a href="#">2</a>
             </li>
-            <li>
+            <li className={step >= 3 ? `active-step` : ""}>
                 <a href="#">3</a>
             </li>
         </ul>
     );
 }
 
-function Texts() {
-    return <h2 className="texts">Step 1: Learn React 👑</h2>;
-}
-
-function Btn({ text }) {
-    return <button className="btn">{text}</button>;
+function Texts({ step }) {
+    return (
+        <h2 className="texts">{`Step ${step} : ${DATABASE[step - 1].text}`}</h2>
+    );
 }
 
 function Close() {
@@ -66,4 +90,5 @@ function Close() {
         </div>
     );
 }
+
 export default App;
