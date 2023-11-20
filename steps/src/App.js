@@ -3,6 +3,7 @@ import "./App.css";
 function App() {
     return (
         <div>
+            <Close />
             <Box />
         </div>
     );
@@ -38,7 +39,7 @@ function Steps() {
 }
 
 function Texts() {
-    return <h3 className="texts">Step 1: Learn React 👑</h3>;
+    return <h2 className="texts">Step 1: Learn React 👑</h2>;
 }
 
 function Btn({ text }) {
@@ -46,6 +47,23 @@ function Btn({ text }) {
 }
 
 function Close() {
-    return <div></div>;
+    return (
+        <div className="close">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 "
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+            </svg>
+        </div>
+    );
 }
 export default App;
