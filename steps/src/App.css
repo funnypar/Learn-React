@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: black;
+    font-family: "Roboto", sans-serif;
     height: 100vh;
     background-image: linear-gradient(
         35deg,
@@ -25,6 +28,19 @@ body {
     );
     background-repeat: no-repeat;
     color: white;
+}
+
+.close {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    width: 2rem;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.close:hover {
+    transform: scale(1.1) rotate(90deg);
 }
 
 .box {
@@ -87,9 +103,9 @@ body {
     color: white;
     background: hsl(240deg 100% 40%) 51%;
     font-size: 0.9rem;
+    transition: all 0.3s;
 }
 .btn:hover {
     transform: scale(1.1);
     background: rgba(0, 0, 0, 0.5);
-    transition: all 0.3s;
 }
