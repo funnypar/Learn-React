@@ -43,10 +43,10 @@ function Box() {
     const [step, setStep] = useState(1);
     // Handlers
     function nextHandler() {
-        step < 3 && setStep(step + 1);
+        step < 3 && setStep((curStep) => curStep + 1);
     }
     function prevHandler() {
-        step > 1 && setStep(step - 1);
+        step > 1 && setStep((curStep) => curStep - 1);
     }
 
     return (
