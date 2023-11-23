@@ -19,7 +19,7 @@ function Header() {
     );
 }
 function Form() {
-    return <div></div>;
+    return <div className="form">What do you need for your 🌴 trip ?</div>;
 }
 function Items() {
     return <div></div>;
