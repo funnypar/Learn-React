@@ -11,5 +11,7 @@ In this repo i want to learn React from Jonas Schmedtmann's course 👑
 3. In the third part, i want to create a very very small Project that i can understand states and events with that (steps) 😉
 
 4. In the next step, i want to create a very very small Project with informations that i have learned until now (dates) 😎
+
+5. In the fifth step, i want to create a small Project, and learn more about React (faraway) 👜
    
                     So let's do it now 🤠 
