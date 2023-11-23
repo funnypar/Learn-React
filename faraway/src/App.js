@@ -25,7 +25,11 @@ function Items() {
     return <div className="list">List</div>;
 }
 function Status() {
-    return <div></div>;
+    return (
+        <div className="status">
+            You have X items on your list, and you already packed X (%X)
+        </div>
+    );
 }
 
 export default App;

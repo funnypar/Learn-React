@@ -26,6 +26,16 @@ h1 {
     height: 65vh;
     font-family: "Rubik", sans-serif;
     display: flex;
+    padding: 1rem 0;
     justify-content: center;
     background-color: #7fb069;
+}
+
+.status {
+    height: 3.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Rubik", sans-serif;
+    background-color: #afe3c0;
 }
