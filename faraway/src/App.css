@@ -13,15 +13,50 @@ h1 {
     justify-content: center;
     background-color: #ca3c25;
 }
-
+/* ------------------------------------- Form --------------------------------------- */
 .form {
     display: flex;
-    justify-content: center;
+    justify-content:center;
     font-family: "Rubik", sans-serif;
     padding: 1.5rem 0;
     background-color: #e6aa68;
+    gap: 2rem;
+    align-items: center;
 }
-
+form {
+    display: flex;
+    justify-content:space-evenly;
+    font-family: "Rubik", sans-serif;
+}
+input[type="number"] {
+    width: 20%;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+}
+input[type="text"] {
+    width: 50%;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.05rem;
+}
+form button {
+    width: 15%;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background-color: #ca3c25;
+    color: aliceblue;
+    font-weight: 700;
+    font-size: 1rem;
+}
+/* ------------------------------------ List ---------------------------------------- */
 .list {
     height: 65vh;
     font-family: "Rubik", sans-serif;

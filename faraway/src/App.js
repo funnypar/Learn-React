@@ -19,7 +19,16 @@ function Header() {
     );
 }
 function Form() {
-    return <div className="form">What do you need for your 🌴 trip ?</div>;
+    return (
+        <div className="form">
+            <h3>What do you need for your 🌴 trip ?</h3>
+            <form>
+                <input type="number" min={1} placeholder="1" />
+                <input type="text" placeholder="Add item..." />
+                <button>Add</button>
+            </form>
+        </div>
+    );
 }
 function Items() {
     return <div className="list">List</div>;
