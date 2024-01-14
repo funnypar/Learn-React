@@ -12,7 +12,7 @@ function App() {
         <div>
             <Header />
             <Form onData={dataHandler}/>
-            <Items />
+            <Items datas={database}/>
             <Status />
         </div>
     );
@@ -29,7 +29,7 @@ function Form(props) {
     function formSubmit(event) {
         event.preventDefault();
         const elements = event.currentTarget.elements;
-        props.onData([{id: Math.random()},{numbers: elements[0].value}, {title: elements[1].value}]);
+        props.onData([{id: Math.random(), numbers: elements[0].value, title: elements[1].value}]);
     }
 
     return (
@@ -43,8 +43,20 @@ function Form(props) {
         </div>
     );
 }
-function Items() {
-    return <div className="list">List</div>;
+function Items({datas}) {
+    return (
+        <div className="list">
+            <div className="items-wrapper">
+                {datas.map(el => {
+                    return <div key={el[0].id}>
+                        <h4>
+                            {el[0].numbers} {el[0].title}<button className="x-sign">&#10005;</button>
+                        </h4>
+                  </div>
+                })}
+            </div>
+        </div>
+    );
 }
 function Status() {
     return (
