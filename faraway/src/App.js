@@ -7,12 +7,17 @@ function App() {
     function dataHandler(datas) {
         setDatabase([...database, datas]);
     }
-
+    function deleteHandler(id) {
+        const newDatabase = database.filter(el => {
+            return el[0].id != id
+        });
+        setDatabase([...newDatabase])
+    }
     return (
         <div>
             <Header />
             <Form onData={dataHandler}/>
-            <Items datas={database}/>
+            <Items datas={database} onDeleteData={deleteHandler}/>
             <Status />
         </div>
     );
@@ -25,6 +30,7 @@ function Header() {
         </div>
     );
 }
+
 function Form(props) {
     function formSubmit(event) {
         event.preventDefault();
@@ -43,15 +49,15 @@ function Form(props) {
         </div>
     );
 }
-function Items({datas}) {
+function Items(props) {
     return (
         <div className="list">
             <div className="items-wrapper">
-                {datas.map(el => {
+                {props.datas.map(el => {
                     return <div key={el[0].id}>
-                        <h4>
-                            {el[0].numbers} {el[0].title}<button className="x-sign">&#10005;</button>
-                        </h4>
+                        <p>
+                            {el[0].numbers} {el[0].title}<button className="x-sign" onClick={() => props.onDeleteData(el[0].id)}>&#10005;</button>
+                        </p>
                   </div>
                 })}
             </div>
