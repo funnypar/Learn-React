@@ -13,6 +13,7 @@ function App() {
         });
         setDatabase([...newDatabase])
     }
+
     return (
         <div>
             <Header />
@@ -50,13 +51,17 @@ function Form(props) {
     );
 }
 function Items(props) {
+    function doneHandler(event) {
+        event.currentTarget.classList.toggle('done');
+    }
+
     return (
         <div className="list">
             <div className="items-wrapper">
                 {props.datas.map(el => {
                     return <div key={el[0].id}>
                         <p>
-                            {el[0].numbers} {el[0].title}<button className="x-sign" onClick={() => props.onDeleteData(el[0].id)}>&#10005;</button>
+                            <span onClick={doneHandler}>{el[0].numbers} {el[0].title}</span><button className="x-sign" onClick={() => props.onDeleteData(el[0].id)}>&#10005;</button>
                         </p>
                   </div>
                 })}
