@@ -8,10 +8,14 @@ function App() {
         setDatabase([...database, datas]);
     }
     function deleteHandler(id) {
-        const newDatabase = database.filter(el => {
-            return el[0].id != id
-        });
-        setDatabase([...newDatabase])
+        // ------------ my way -------------------
+        // const newDatabase = database.filter(el => {
+        //     return el[0].id != id
+        // });
+        // setDatabase([...newDatabase])
+
+        // ----------- Jonas way ----------------
+        setDatabase(database => database.filter(data => data[0].id !== id));
     }
 
     return (
