@@ -56,7 +56,8 @@ function Form(props) {
 }
 function Items(props) {
     function doneHandler(event) {
-        event.currentTarget.classList.toggle('done');
+        // console.log(event.target.parentElement);
+        event.target.parentElement.querySelector("p").classList.toggle('done');
     }
 
     return (
@@ -64,9 +65,11 @@ function Items(props) {
             <div className="items-wrapper">
                 {props.datas.map(el => {
                     return <div key={el[0].id}>
+                        <input type="checkbox" onClick={doneHandler}/>
                         <p>
-                            <span onClick={doneHandler}>{el[0].numbers} {el[0].title}</span><button className="x-sign" onClick={() => props.onDeleteData(el[0].id)}>&#10005;</button>
+                            <span>{el[0].numbers} {el[0].title}</span>
                         </p>
+                        <button className="x-sign" onClick={() => props.onDeleteData(el[0].id)}>&#10005;</button>
                   </div>
                 })}
             </div>
