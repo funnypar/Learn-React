@@ -1,5 +1,9 @@
 import { useState } from "react";
 import "./App.css";
+import Header from "./components/Header";
+import Form from "./components/Form";
+import Items from "./components/Items";
+import Status from "./components/Status";
 
 function App() {
     const [database, setDatabase] = useState([]);
@@ -26,72 +30,6 @@ function App() {
             <Status items={database.length} />
         </div>
     );
-}
-
-function Header() {
-    return (
-        <div className="header">
-            <h1>🌵 Far Away 👜</h1>
-        </div>
-    );
-}
-
-function Form(props) {
-    function formSubmit(event) {
-        event.preventDefault();
-        const elements = event.currentTarget.elements;
-        props.onData([
-            {
-                id: Math.random(),
-                numbers: elements[0].value,
-                title: elements[1].value,
-            },
-        ]);
-    }
-
-    return (
-        <div className="form">
-            <h3>What do you need for your 🌴 trip ?</h3>
-            <form onSubmit={formSubmit}>
-                <input type="number" min={1} placeholder="1" required />
-                <input type="text" placeholder="Add item..." required />
-                <button type="submit">Add</button>
-            </form>
-        </div>
-    );
-}
-function Items(props) {
-    function doneHandler(event) {
-        event.target.parentElement.querySelector("p").classList.toggle("done");
-    }
-
-    return (
-        <div className="list">
-            <div className="items-wrapper">
-                {props.datas.map((el) => {
-                    return (
-                        <div key={el[0].id}>
-                            <input type="checkbox" onClick={doneHandler} />
-                            <p>
-                                <span>
-                                    {el[0].numbers} {el[0].title}
-                                </span>
-                            </p>
-                            <button
-                                className="x-sign"
-                                onClick={() => props.onDeleteData(el[0].id)}
-                            >
-                                &#10005;
-                            </button>
-                        </div>
-                    );
-                })}
-            </div>
-        </div>
-    );
-}
-function Status({ items }) {
-    return <div className="status">You have {items} items on your list</div>;
 }
 
 export default App;
