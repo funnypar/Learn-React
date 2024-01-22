@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Item() {
+export default function Item(props) {
     const [show, setShow] = useState(false);
 
     function showHalndelr() {
@@ -9,8 +9,9 @@ export default function Item() {
 
     return (
         <div className={"item"} onClick={showHalndelr}>
-            <div className="header-wrapper">
-                <h3>What is React ?</h3>
+            <div className={`header-wrapper ${show ? "active" : ""}`}>
+                <h4>{props.datas.id}</h4>
+                <h3>{props.datas.question}</h3>
                 {!show ? (
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -42,15 +43,7 @@ export default function Item() {
                     </svg>
                 )}
             </div>
-            {show ? (
-                <p>
-                    React is a JavaScript library created by Facebook React is a
-                    User Interface (UI) library React is a tool for building UI
-                    components
-                </p>
-            ) : (
-                ""
-            )}
+            {show ? <p>{props.datas.answer}</p> : ""}
         </div>
     );
 }
