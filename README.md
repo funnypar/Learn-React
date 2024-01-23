@@ -15,5 +15,7 @@ In this repo i want to learn React from Jonas Schmedtmann's course 👑
 5. In the fifth step, i want to create a small Project, and learn more about React (faraway) 👜
 
 6. In the next project, i want to create a Project, and learn more about States and setState in React (flashcard) 🤖
+
+7. Next , i want to create a Pdroject, and doing some practice in React (dayCounter) 👣
    
                     So let's do it now 🤠 
