@@ -16,24 +16,30 @@ export default function Form() {
     function secondIdeaHandler(idea) {
         setSecondIdea(idea);
     }
+    function submitHandler(event) {
+        event.preventDefault();
+        setValue("");
+        setFirstIdea("");
+        setSecondIdea("");
+    }
 
     // calculations
     const tip = (value * ((+firstIdea + +secondIdea) / 2)) / 100;
     const cost = tip + +value;
 
     return (
-        <form>
-            <Bill onVal={valueHandler} />
-            <Idea onIdea={firstIdeaHandler}>
+        <form onSubmit={submitHandler}>
+            <Bill value={value} onVal={valueHandler} />
+            <Idea idea={firstIdea} onIdea={firstIdeaHandler}>
                 What do you think about the service ?
             </Idea>
-            <Idea onIdea={secondIdeaHandler}>
+            <Idea idea={secondIdea} onIdea={secondIdeaHandler}>
                 What does your friend think about the service ?
             </Idea>
             <h3>
                 The Cost is ${cost} (${value} + ${tip})
             </h3>
-            <button>Reset</button>
+            <button type="submit">Reset</button>
         </form>
     );
 }

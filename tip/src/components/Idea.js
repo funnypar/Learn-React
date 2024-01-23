@@ -1,4 +1,4 @@
-export default function Idea({ onIdea, children }) {
+export default function Idea({ idea, onIdea, children }) {
     return (
         <div>
             <label htmlFor="idea">{children}</label>
@@ -6,6 +6,7 @@ export default function Idea({ onIdea, children }) {
                 name="idea"
                 id="idea"
                 onChange={(event) => onIdea(event.target.value)}
+                value={idea}
             >
                 <option value="0">That was not good 😖 (0% tip)</option>
                 <option value="10">That was good 😄 (10% tip)</option>
