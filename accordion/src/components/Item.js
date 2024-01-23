@@ -1,17 +1,15 @@
-import { useState } from "react";
-
-export default function Item(props) {
-    const [show, setShow] = useState(false);
+export default function Item({ curItem, onCurItem, datas, numItem }) {
+    const show = numItem === curItem;
 
     function showHalndelr() {
-        setShow(!show);
+        onCurItem(numItem);
     }
 
     return (
         <div className={"item"} onClick={showHalndelr}>
             <div className={`header-wrapper ${show ? "active" : ""}`}>
-                <h4>{props.datas.id}</h4>
-                <h3>{props.datas.question}</h3>
+                <h4>{datas.id}</h4>
+                <h3>{datas.question}</h3>
                 {!show ? (
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +41,7 @@ export default function Item(props) {
                     </svg>
                 )}
             </div>
-            {show ? <p>{props.datas.answer}</p> : ""}
+            {show ? <p>{datas.answer}</p> : ""}
         </div>
     );
 }

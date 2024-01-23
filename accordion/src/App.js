@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import Item from "./components/Item";
 
@@ -20,10 +21,17 @@ const DATABASE = [
 ];
 
 function App() {
+    const [curItem, setCurItem] = useState(null);
+
     return (
         <div className="App">
-            {DATABASE.map((data) => (
-                <Item datas={data} />
+            {DATABASE.map((data, index) => (
+                <Item
+                    datas={data}
+                    onCurItem={setCurItem}
+                    curItem={curItem}
+                    numItem={index}
+                />
             ))}
         </div>
     );
