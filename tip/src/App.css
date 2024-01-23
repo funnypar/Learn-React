@@ -93,3 +93,42 @@ button {
 button:hover {
     transform: scale(1.1);
 }
+/* -------------------------------- medi queries ------------------------------ */
+
+@media screen and (max-width: 640px) {
+    .App {
+        gap: 2.5rem;
+    }
+    h1 {
+        text-align: center;
+        font-size: 3rem;
+    }
+    h3 {
+        margin-top: 0.75rem;
+        text-align: center;
+    }
+    form {
+        padding: 1rem;
+        width: 90%;
+    }
+    form div {
+        align-items: baseline;
+    }
+    input[type="number"] {
+        border-radius: 1rem;
+        padding: 0.3rem 0.5rem;
+        width: 30%;
+    }
+    .responsive-submit {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    select {
+        align-self: center;
+        width: 70%;
+    }
+    button {
+        padding: 0.4rem;
+        width: 30%;
+    }
+}

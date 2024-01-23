@@ -1,6 +1,6 @@
 export default function Idea({ idea, onIdea, children }) {
     return (
-        <div>
+        <div className="responsive-submit">
             <label htmlFor="idea">{children}</label>
             <select
                 name="idea"
