@@ -16,6 +16,8 @@ In this repo i want to learn React from Jonas Schmedtmann's course 👑
 
 6. In the next project, i want to create a Project, and learn more about States and setState in React (flashcard) 🤖
 
-7. Next , i want to create a Pdroject, and doing some practice in React (dayCounter) 👣
+7. Next , i want to create a Project, and doing some practice in React (dayCounter) 👣
+
+8. In the next part , i want to create a Project, and doing some practice and learn about some logics in React (accordion) 🪧
    
                     So let's do it now 🤠 
