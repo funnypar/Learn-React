@@ -12,3 +12,46 @@
     font-family: "Roboto", sans-serif;
     font-style: normal;
 }
+/* ------------------------ Friends -------------------------- */
+.wrapper {
+    width: 40%;
+}
+.friend-wrapper {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s;
+    padding: 0.5rem 1rem;
+}
+.friend-wrapper:hover {
+    background-color: bisque;
+}
+.friend-wrapper div {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+h4 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+}
+h4 span {
+    font-weight: 400;
+    font-size: 1rem;
+}
+img {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+}
+.friend-wrapper button {
+    border: none;
+    background-color: darkorange;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
