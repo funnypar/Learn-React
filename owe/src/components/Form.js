@@ -5,7 +5,7 @@ export default function Form() {
         <form className="friend-form">
             <div>
                 <div>
-                    <label htmlFor="friend">Friend Name :</label>
+                    <label htmlFor="friend">🦸 Friend Name </label>
                     <input
                         type="text"
                         placeholder="mopano"
@@ -14,7 +14,7 @@ export default function Form() {
                     />
                 </div>
                 <div>
-                    <label htmlFor="image">Image URL :</label>
+                    <label htmlFor="image">📷 Image URL </label>
                     <input
                         type="text"
                         placeholder="http://image.jpg"
