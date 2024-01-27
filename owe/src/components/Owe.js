@@ -1,9 +1,9 @@
 import Btn from "./Btn";
 
-export default function owe() {
+export default function owe({ person }) {
     return (
         <div className="bill-wrapper">
-            <h2>split a bill with sara</h2>
+            <h2>split a bill with {person.name}</h2>
             <form>
                 <div>
                     <label htmlFor="bill">💰 Bill Value </label>
@@ -19,12 +19,14 @@ export default function owe() {
                     />
                 </div>
                 <div>
-                    <label htmlFor="friendexpense">💸 Friend Expense </label>
+                    <label htmlFor="friendexpense">
+                        💸 {person.name}'s Expense{" "}
+                    </label>
                     <input
-                        type="number"
+                        type="text"
                         name="friendexpense"
                         id="friendexpense"
-                        min={"1"}
+                        disabled
                     />
                 </div>
                 <div>
@@ -33,7 +35,7 @@ export default function owe() {
                     </label>
                     <select>
                         <option>You</option>
-                        <option>Friend</option>
+                        <option>{person.name}</option>
                     </select>
                 </div>
                 <Btn classname={"btn-split btn"}>Split Bill</Btn>

@@ -3,7 +3,7 @@ import Btn from "./Btn";
 import Form from "./Form";
 import { useState } from "react";
 
-export default function Friends() {
+export default function Friends({ onBill, showOwe }) {
     const [DATABASE, setDATABASE] = useState([
         { id: "1p", name: "sara", img: "media/sara.jpg" },
         { id: "2p", name: "morgen", img: "media/morgen.jpg" },
@@ -16,12 +16,13 @@ export default function Friends() {
     }
 
     return (
-        <div className="wrapper">
-            {DATABASE.map((person) => {
+        <div className={`wrapper ${showOwe ? "active" : ""}`}>
+            {DATABASE.map((person, index) => {
                 return (
                     <Friend
                         name={person.name}
                         image={person.img}
+                        onOwe={() => onBill(person)}
                         key={person.id}
                     />
                 );

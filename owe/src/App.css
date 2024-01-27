@@ -22,6 +22,9 @@
     gap: 1rem;
     align-self: self-start;
 }
+.active {
+    align-self: center;
+}
 .friend-wrapper {
     width: 100%;
     display: flex;

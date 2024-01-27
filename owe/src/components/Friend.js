@@ -1,6 +1,4 @@
-import Btn from "./Btn";
-
-export default function Friend({ name, image }) {
+export default function Friend({ name, image, onOwe }) {
     return (
         <div className="friend-wrapper">
             <div>
@@ -9,7 +7,9 @@ export default function Friend({ name, image }) {
                     {name} <span>You owe Sara $7</span>
                 </h4>
             </div>
-            <Btn classname={"btn"}>Select</Btn>
+            <button className={"btn"} onClick={() => onOwe()}>
+                Select
+            </button>
         </div>
     );
 }
