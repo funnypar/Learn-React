@@ -1,13 +1,40 @@
-import Btn from "./Btn";
+import { useState } from "react";
 
-export default function owe({ person }) {
+export default function Owe({ person, onNewPersonData }) {
+    const [bill, setBill] = useState("");
+    const [yourExpense, setYourExpense] = useState("");
+    const [who, setWho] = useState(1);
+    const friendExpense = bill - yourExpense;
+
+    function submitHandler(event) {
+        event.preventDefault();
+        if (who === 1) {
+            onNewPersonData({
+                ...person,
+                balance: person.balance + friendExpense,
+            });
+        } else {
+            onNewPersonData({
+                ...person,
+                balance: person.balance - friendExpense,
+            });
+        }
+    }
+
     return (
         <div className="bill-wrapper">
             <h2>split a bill with {person.name}</h2>
-            <form>
+            <form onSubmit={submitHandler}>
                 <div>
                     <label htmlFor="bill">💰 Bill Value </label>
-                    <input type="number" name="bill" id="bill" min={"1"} />
+                    <input
+                        type="number"
+                        name="bill"
+                        id="bill"
+                        min={"1"}
+                        value={bill}
+                        onChange={(event) => setBill(event.target.value)}
+                    />
                 </div>
                 <div>
                     <label htmlFor="yourexpense">💳 Your Expense </label>
@@ -16,6 +43,9 @@ export default function owe({ person }) {
                         name="yourexpense"
                         id="yourexpense"
                         min={"1"}
+                        max={bill}
+                        value={yourExpense}
+                        onChange={(event) => setYourExpense(event.target.value)}
                     />
                 </div>
                 <div>
@@ -26,6 +56,7 @@ export default function owe({ person }) {
                         type="text"
                         name="friendexpense"
                         id="friendexpense"
+                        value={bill - yourExpense}
                         disabled
                     />
                 </div>
@@ -33,12 +64,12 @@ export default function owe({ person }) {
                     <label htmlFor="friendexpense">
                         🤑 Who is paying the bill ?{" "}
                     </label>
-                    <select>
-                        <option>You</option>
-                        <option>{person.name}</option>
+                    <select onChange={(event) => setWho(event.target.value)}>
+                        <option value={1}>You</option>
+                        <option value={0}>{person.name}</option>
                     </select>
                 </div>
-                <Btn classname={"btn-split btn"}>Split Bill</Btn>
+                <button className={"btn-split btn"}>Split Bill</button>
             </form>
         </div>
     );

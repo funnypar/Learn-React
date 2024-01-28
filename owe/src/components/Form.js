@@ -6,7 +6,12 @@ export default function Form({ onFriend }) {
 
     function submitHandler(event) {
         event.preventDefault();
-        onFriend({ id: Math.random(), name: nameInput, img: imgInput });
+        onFriend({
+            id: Math.random(),
+            name: nameInput,
+            img: imgInput,
+            balance: 0,
+        });
     }
 
     return (

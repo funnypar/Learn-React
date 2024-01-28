@@ -4,6 +4,11 @@ import Friends from "./components/Friends";
 import Owe from "./components/Owe";
 
 function App() {
+    const [DATABASE, setDATABASE] = useState([
+        { id: "1p", name: "sara", img: "media/sara.jpg", balance: 0 },
+        { id: "2p", name: "morgen", img: "media/morgen.jpg", balance: 0 },
+        { id: "3p", name: "nika", img: "media/nika.jpg", balance: 0 },
+    ]);
     const [data, setData] = useState("");
     const [showOwe, setShowOwe] = useState(false);
 
@@ -11,10 +16,34 @@ function App() {
         setData(datas);
         setShowOwe(true);
     }
+
+    function newPersonHandler(data) {
+        setDATABASE((database) => [...database, data]);
+    }
+
+    function newPersonDataHandler(newPerson) {
+        setDATABASE((database) =>
+            database.map((el) =>
+                el.id === newPerson.id
+                    ? { ...el, balance: el.balance + newPerson.balance }
+                    : el
+            )
+        );
+    }
+
     return (
         <div className="App">
-            <Friends onBill={dataHandler} showOwe={!showOwe} />
-            {showOwe ? <Owe person={data} /> : ""}
+            <Friends
+                onBill={dataHandler}
+                showOwe={!showOwe}
+                database={DATABASE}
+                onNewPerson={newPersonHandler}
+            />
+            {showOwe ? (
+                <Owe person={data} onNewPersonData={newPersonDataHandler} />
+            ) : (
+                ""
+            )}
         </div>
     );
 }
