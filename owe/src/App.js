@@ -33,17 +33,24 @@ function App() {
 
     return (
         <div className="App">
-            <Friends
-                onBill={dataHandler}
-                showOwe={!showOwe}
-                database={DATABASE}
-                onNewPerson={newPersonHandler}
-            />
-            {showOwe ? (
-                <Owe person={data} onNewPersonData={newPersonDataHandler} />
-            ) : (
-                ""
-            )}
+            <h1>OWE MANAGMENT</h1>
+            <div className="app-wrapper">
+                <Friends
+                    onBill={dataHandler}
+                    showOwe={!showOwe}
+                    database={DATABASE}
+                    onNewPerson={newPersonHandler}
+                />
+                {showOwe ? (
+                    <Owe
+                        person={data}
+                        onNewPersonData={newPersonDataHandler}
+                        onShowOwe={() => setShowOwe(false)}
+                    />
+                ) : (
+                    ""
+                )}
+            </div>
         </div>
     );
 }

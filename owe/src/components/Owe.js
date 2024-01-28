@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Owe({ person, onNewPersonData }) {
+export default function Owe({ person, onNewPersonData, onShowOwe }) {
     const [bill, setBill] = useState("");
     const [yourExpense, setYourExpense] = useState("");
     const [who, setWho] = useState(1);
@@ -8,19 +8,19 @@ export default function Owe({ person, onNewPersonData }) {
 
     function submitHandler(event) {
         event.preventDefault();
-        if (who === 1) {
+        if (+who === 1) {
             onNewPersonData({
                 ...person,
                 balance: person.balance + friendExpense,
             });
-        } else {
+        } else if (+who === 0) {
             onNewPersonData({
                 ...person,
                 balance: person.balance - friendExpense,
             });
         }
+        onShowOwe();
     }
-
     return (
         <div className="bill-wrapper">
             <h2>split a bill with {person.name}</h2>
