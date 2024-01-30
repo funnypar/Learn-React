@@ -1,3 +1,7 @@
-export default function Btn({ children }) {
-    return <button className="list-btn">{children}</button>;
+export default function Btn({ children, onClicked }) {
+    return (
+        <button className="list-btn" onClick={() => onClicked()}>
+            {children}
+        </button>
+    );
 }

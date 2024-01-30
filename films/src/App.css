@@ -110,6 +110,7 @@ nav input {
     top: 1rem;
     cursor: pointer;
     background-color: #282828;
+    padding: 0.25rem;
 }
 .list-btn:hover {
     transform: scale(1.1);
