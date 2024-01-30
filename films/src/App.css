@@ -124,7 +124,7 @@ nav input {
 }
 /* ------------------------------ user control ------------------ */
 .user-control {
-    padding: 1rem;
+    padding: 1.5rem 1rem;
     color: white;
     display: flex;
     flex-direction: column;
