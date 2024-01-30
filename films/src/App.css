@@ -36,6 +36,10 @@ nav h3 {
     font-size: 1rem;
     justify-self: end;
     margin-right: 2rem;
+    font-weight: 400;
+}
+nav h3 span {
+    font-weight: 700;
 }
 nav div {
     display: flex;
@@ -117,4 +121,47 @@ nav input {
 }
 .list-btn svg {
     color: white;
+}
+/* ------------------------------ user control ------------------ */
+.user-control {
+    padding: 1rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: gray;
+    border-radius: 0.5rem;
+}
+.user-control h3 {
+    font-size: 1rem;
+}
+ul {
+    display: flex;
+    justify-content: space-between;
+}
+li {
+    list-style: none;
+    font-size: 0.8rem;
+}
+/* ------------------------- user item -------------------------- */
+.UserItem-wrapper {
+    color: white;
+    display: flex;
+    padding: 0.75rem 1.5rem;
+    gap: 1rem;
+}
+.UserItem-wrapper img {
+    height: 4rem;
+    width: 3rem;
+    border-radius: 0.5rem;
+}
+.UserItem-wrapper div {
+    align-self: center;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    width: 100%;
+}
+.UserItem-wrapper ul {
+    width: 90%;
 }

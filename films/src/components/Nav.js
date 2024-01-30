@@ -9,7 +9,9 @@ export default function Nav() {
                 <h2>Mopanofilms</h2>
             </div>
             <input type="text" placeholder="Search films..." />
-            <h3>Found 0 top results</h3>
+            <h3>
+                Found <span>0</span> top results
+            </h3>
         </nav>
     );
 }
