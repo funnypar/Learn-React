@@ -69,4 +69,51 @@ nav input {
     background-color: #575757;
     border-radius: 0.5rem;
     overflow: hidden;
+    position: relative;
+}
+/* --------------------------------- item wrapper -------------------------- */
+.item-wrapper {
+    color: white;
+    display: flex;
+    padding: 0.75rem 1.5rem;
+    gap: 1rem;
+}
+.item-wrapper img {
+    height: 4rem;
+    width: 3rem;
+    border-radius: 0.5rem;
+}
+.item-wrapper div {
+    align-self: center;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+}
+.name {
+    font-size: 1rem;
+    font-weight: 700;
+}
+.year {
+    font-size: 0.85rem;
+}
+/* ----------------------------- btn -------------------------- */
+.list-btn {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    height: 1.5rem;
+    width: 1.5rem;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
+    background-color: #282828;
+}
+.list-btn:hover {
+    transform: scale(1.1);
+}
+.list-btn svg {
+    color: white;
 }
