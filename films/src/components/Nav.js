@@ -1,17 +1,13 @@
-export default function Nav() {
+import Logo from "./Logo";
+import NavResult from "./NavResult";
+import Search from "./Search";
+
+export default function Nav({ filmsNumber }) {
     return (
         <nav>
-            <div>
-                <img
-                    src="media/mopanofilms-high-resolution-logo-transparent.png"
-                    alt="logo"
-                />
-                <h2>Mopanofilms</h2>
-            </div>
-            <input type="text" placeholder="Search films..." />
-            <h3>
-                Found <span>0</span> top results
-            </h3>
+            <Logo />
+            <Search />
+            <NavResult filmsNumber={filmsNumber} />
         </nav>
     );
 }

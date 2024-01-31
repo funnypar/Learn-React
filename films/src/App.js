@@ -48,7 +48,7 @@ const WatchedDATABASE = [
 function App() {
     return (
         <div className="App">
-            <Nav />
+            <Nav filmsNumber={DATABASE.length} />
             <div className="wrapper">
                 <ListFilm database={DATABASE} />
                 <ListUser database={WatchedDATABASE} />
