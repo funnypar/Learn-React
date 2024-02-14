@@ -72,7 +72,7 @@ nav input {
     height: 100%;
     background-color: #575757;
     border-radius: 0.5rem;
-    overflow: hidden;
+    overflow: scroll;
     position: relative;
 }
 /* --------------------------------- item wrapper -------------------------- */
