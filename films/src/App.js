@@ -3,6 +3,7 @@ import "./App.css";
 import ListFilm from "./components/ListFilm";
 import ListUser from "./components/ListUser";
 import Nav from "./components/Nav";
+import Loader from "./components/Loader";
 
 const KEY = "fa192559";
 const WatchedDATABASE = [
@@ -28,18 +29,26 @@ const WatchedDATABASE = [
 
 function App() {
     const [DATABASE, setDATBASE] = useState([]);
+    const [isLoad, setIsLoad] = useState(false);
 
     useEffect(function () {
-        fetch(`http://www.omdbapi.com/?apikey=${KEY}&s=interstellar`)
-            .then((req) => req.json())
-            .then((data) => setDATBASE(data.Search));
+        async function fetchData() {
+            setIsLoad(true);
+            const req = await fetch(
+                `http://www.omdbapi.com/?apikey=${KEY}&s=interstellar`
+            );
+            const data = await req.json();
+            setDATBASE(data.Search);
+            setIsLoad(false);
+        }
+        fetchData();
     }, []);
 
     return (
         <div className="App">
             <Nav filmsNumber={DATABASE.length} />
             <div className="wrapper">
-                <ListFilm database={DATABASE} />
+                <ListFilm database={DATABASE} load={isLoad} />
                 <ListUser database={WatchedDATABASE} />
             </div>
         </div>

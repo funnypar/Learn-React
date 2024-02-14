@@ -1,8 +1,9 @@
 import { useState } from "react";
 import BtnFilm from "./BtnFilm";
 import ListItemFilm from "./ListItemFilm";
+import Loader from "./Loader";
 
-export default function List({ database }) {
+export default function List({ database, load }) {
     const [showBtn, setShowBtn] = useState(false);
 
     return (
@@ -11,7 +12,8 @@ export default function List({ database }) {
                 showBtn={showBtn}
                 onSetShowBtn={() => setShowBtn(!showBtn)}
             />
-            {!showBtn ? <ListItemFilm database={database} /> : ""}
+            {!showBtn && !load ? <ListItemFilm database={database} /> : ""}
+            {load ? <Loader /> : ""}
         </div>
     );
 }
