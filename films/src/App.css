@@ -319,3 +319,13 @@ li {
         transform: translate3d(0, 0, 0) scale(1);
     }
 }
+/*  ----------------------------------- error ------------------------------- */
+.error {
+    color: orange;
+    font-weight: 700;
+    font-size: small;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}

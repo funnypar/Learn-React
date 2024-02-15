@@ -3,9 +3,10 @@ import "./App.css";
 import ListFilm from "./components/ListFilm";
 import ListUser from "./components/ListUser";
 import Nav from "./components/Nav";
-import Loader from "./components/Loader";
 
 const KEY = "fa192559";
+const query = "interstellar";
+
 const WatchedDATABASE = [
     {
         imdbID: "tt1375666",
@@ -30,16 +31,24 @@ const WatchedDATABASE = [
 function App() {
     const [DATABASE, setDATBASE] = useState([]);
     const [isLoad, setIsLoad] = useState(false);
+    const [err, setErr] = useState("");
 
     useEffect(function () {
         async function fetchData() {
-            setIsLoad(true);
-            const req = await fetch(
-                `http://www.omdbapi.com/?apikey=${KEY}&s=interstellar`
-            );
-            const data = await req.json();
-            setDATBASE(data.Search);
-            setIsLoad(false);
+            try {
+                setIsLoad(true);
+                const req = await fetch(
+                    `http://www.omdbapi.com/?apikey=${KEY}&s=${query}`
+                );
+                const data = await req.json();
+                if (data.Response === "False")
+                    throw new Error("🥹 Something went wrong...");
+                setDATBASE(data.Search);
+                setIsLoad(false);
+            } catch (err) {
+                console.log(err.message);
+                setErr(err.message);
+            }
         }
         fetchData();
     }, []);
@@ -48,7 +57,7 @@ function App() {
         <div className="App">
             <Nav filmsNumber={DATABASE.length} />
             <div className="wrapper">
-                <ListFilm database={DATABASE} load={isLoad} />
+                <ListFilm database={DATABASE} load={isLoad} error={err} />
                 <ListUser database={WatchedDATABASE} />
             </div>
         </div>
