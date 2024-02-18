@@ -9,6 +9,7 @@ export default function ListItemUser({ database }) {
                 userRating={el.userRating}
                 imdbRating={el.imdbRating}
                 time={el.runtime}
+                key={el.imdbID}
             />
         );
     });

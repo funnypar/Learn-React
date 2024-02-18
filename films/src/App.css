@@ -81,6 +81,11 @@ nav input {
     display: flex;
     padding: 0.75rem 1.5rem;
     gap: 1rem;
+    transition: all 0.3s;
+}
+.item-wrapper:hover {
+    cursor: pointer;
+    background-color: #525050;
 }
 .item-wrapper img {
     height: 4rem;
@@ -115,12 +120,19 @@ nav input {
     cursor: pointer;
     background-color: #282828;
     padding: 0.25rem;
+    transform: scale(1.1);
 }
 .list-btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 .list-btn svg {
     color: white;
+}
+.prev {
+    background-color: rgb(249, 249, 249) !important;
+}
+.prev svg {
+    color: #000;
 }
 /* ------------------------------ user control ------------------ */
 .user-control {

@@ -1,7 +1,7 @@
-export default function Item({ name, year, poster }) {
+export default function Item({ name, year, poster, onClicked, key }) {
     return (
-        <div>
-            <div className="item-wrapper">
+        <>
+            <div className="item-wrapper" onClick={() => onClicked()}>
                 <img src={poster} alt={name} />
                 <div>
                     <p className="name">{name}</p>
@@ -9,6 +9,6 @@ export default function Item({ name, year, poster }) {
                 </div>
             </div>
             <hr />
-        </div>
+        </>
     );
 }

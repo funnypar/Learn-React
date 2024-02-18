@@ -4,8 +4,7 @@ import ListFilm from "./components/ListFilm";
 import ListUser from "./components/ListUser";
 import Nav from "./components/Nav";
 
-const KEY = "fa192559";
-const query = "interstellar";
+const KEY = "2dfd8a66";
 
 const WatchedDATABASE = [
     {
@@ -32,33 +31,52 @@ function App() {
     const [DATABASE, setDATBASE] = useState([]);
     const [isLoad, setIsLoad] = useState(false);
     const [err, setErr] = useState("");
+    const [query, setQuery] = useState("");
+    const [itemSelected, setItemSelected] = useState(null);
 
-    useEffect(function () {
-        async function fetchData() {
-            try {
-                setIsLoad(true);
-                const req = await fetch(
-                    `http://www.omdbapi.com/?apikey=${KEY}&s=${query}`
-                );
-                const data = await req.json();
-                if (data.Response === "False")
-                    throw new Error("🥹 Something went wrong...");
-                setDATBASE(data.Search);
-                setIsLoad(false);
-            } catch (err) {
-                console.log(err.message);
-                setErr(err.message);
+    useEffect(
+        function () {
+            async function fetchData() {
+                try {
+                    setErr("");
+                    setIsLoad(true);
+                    if (!query) throw new Error("🎥 Search for a movie");
+                    const req = await fetch(
+                        `http://www.omdbapi.com/?apikey=${KEY}&s=${query}`
+                    );
+                    const data = await req.json();
+                    if (data.Response === "False")
+                        throw new Error("🥹 Something went wrong...");
+                    setDATBASE(data.Search);
+                    setIsLoad(false);
+                } catch (err) {
+                    console.log(err.message);
+                    setErr(err.message);
+                }
             }
-        }
-        fetchData();
-    }, []);
+            fetchData();
+        },
+        [query]
+    );
 
     return (
         <div className="App">
-            <Nav filmsNumber={DATABASE.length} />
+            <Nav
+                filmsNumber={DATABASE.length}
+                onSearch={(data) => setQuery(data)}
+            />
             <div className="wrapper">
-                <ListFilm database={DATABASE} load={isLoad} error={err} />
-                <ListUser database={WatchedDATABASE} />
+                <ListFilm
+                    database={DATABASE}
+                    load={isLoad}
+                    error={err}
+                    onSelected={(id) => setItemSelected(id)}
+                />
+                <ListUser
+                    database={WatchedDATABASE}
+                    selected={itemSelected}
+                    onClicked={() => setItemSelected(null)}
+                />
             </div>
         </div>
     );
