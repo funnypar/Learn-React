@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Star from "./Star";
 
 const KEY = "2dfd8a66";
 
@@ -6,18 +7,12 @@ export default function SelectedItem({ id }) {
     const [item, setItem] = useState({});
     const {
         Title: title,
-        Year: year,
         Actors: actors,
-        Awards: awards,
-        Country: country,
-        DVD: dvd,
         Director: director,
         Genre: genre,
-        Language: language,
         Plot: plot,
         Poster: poster,
         Released: released,
-        imdbRating: imdbRating,
         Runtime: runtime,
     } = item;
 
@@ -46,12 +41,12 @@ export default function SelectedItem({ id }) {
                     </p>
                     <p>{genre}</p>
                     <p>
-                        <span>⭐️</span> {imdbRating} IMDB rating
+                        <span>⭐️</span> {item.imdbRating} IMDB rating
                     </p>
                 </div>
             </div>
             <div className="bottom-part">
-                <div>stars</div>
+                <Star />
                 <div className="infos">
                     <p>{plot}</p>
                     <p>Starring {actors}</p>
