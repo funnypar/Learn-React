@@ -1,4 +1,4 @@
-export default function Item({ name, year, poster, onClicked, key }) {
+export default function Item({ name, year, poster, onClicked }) {
     return (
         <>
             <div className="item-wrapper" onClick={() => onClicked()}>

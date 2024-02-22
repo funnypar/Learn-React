@@ -8,7 +8,7 @@ export default function ListItemUser({ database }) {
                 poster={el.Poster}
                 userRating={el.userRating}
                 imdbRating={el.imdbRating}
-                time={el.runtime}
+                time={el.Runtime}
                 key={el.imdbID}
             />
         );

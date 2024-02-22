@@ -371,8 +371,29 @@ li {
     background-color: #222;
     height: 100%;
 }
+.bottom-part button {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    width: 40%;
+    margin: 0 auto;
+    background-color: #fcc419;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+.bottom-part button:hover {
+    transform: scale(1.05);
+}
 .infos {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+}
+.rated {
+    color: #fcc419;
+    font-style: italic;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
 }

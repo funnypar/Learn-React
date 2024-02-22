@@ -1,14 +1,16 @@
+const average = (arr) =>
+    arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
+
 export default function UserControl({ database }) {
-    const userStars = database.map((el) => el.userRating);
-    const userStarsAverage =
-        userStars.reduce((a, b) => a + b) / userStars.length;
-    const imbdStars = database.map((el) => el.imdbRating);
-    const imbdStarsAverage =
-        Math.round(
-            (imbdStars.reduce((a, b) => a + b) / imbdStars.length) * 10
-        ) / 10;
-    const times = database.map((el) => el.runtime);
-    const timesAverage = times.reduce((a, b) => a + b) / times.length;
+    const avgImdbRating = average(
+        database.map((movie) => movie.imdbRating)
+    ).toFixed(1);
+    const avgUserRating = average(
+        database.map((movie) => movie.userRating)
+    ).toFixed(1);
+    const avgRuntime = average(
+        database.map((movie) => movie.Runtime.split(" ").at(0))
+    );
 
     return (
         <div className="user-control">
@@ -16,9 +18,9 @@ export default function UserControl({ database }) {
             <div>
                 <ul>
                     <li>#️⃣ 2 Films</li>
-                    <li>⭐️ {userStarsAverage}</li>
-                    <li>🌟 {imbdStarsAverage}</li>
-                    <li>⏳ {timesAverage} min</li>
+                    <li>⭐️ {avgUserRating}</li>
+                    <li>🌟 {avgImdbRating}</li>
+                    <li>⏳ {avgRuntime} min</li>
                 </ul>
             </div>
         </div>

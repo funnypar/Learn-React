@@ -5,7 +5,7 @@ import UserControl from "./UserControl";
 import SelectedItem from "./SelectedItem";
 import Btn from "./Btn";
 
-export default function ListUser({ database, selected, onClicked }) {
+export default function ListUser({ database, selected, onClicked, onWatch }) {
     const [showBtn, setShowBtn] = useState(false);
 
     return (
@@ -36,7 +36,12 @@ export default function ListUser({ database, selected, onClicked }) {
                             />
                         </svg>
                     </Btn>
-                    <SelectedItem id={selected} />
+                    <SelectedItem
+                        database={database}
+                        id={selected}
+                        onWatch={(data) => onWatch(data)}
+                        onClicked={() => onClicked()}
+                    />
                 </>
             )}
         </div>
