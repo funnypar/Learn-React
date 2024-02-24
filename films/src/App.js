@@ -14,6 +14,10 @@ function App() {
     const [itemSelected, setItemSelected] = useState(null);
     const [WatchedDATABASE, setWatchedDATABASE] = useState([]);
 
+    function onDeletedHandler(id) {
+        setWatchedDATABASE(WatchedDATABASE.filter((el) => el.imdbID !== id));
+    }
+
     useEffect(
         function () {
             async function fetchData() {
@@ -59,6 +63,7 @@ function App() {
                     onWatch={(data) =>
                         setWatchedDATABASE((state) => [...state, data])
                     }
+                    onDeleted={onDeletedHandler}
                 />
             </div>
         </div>

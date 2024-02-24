@@ -5,7 +5,13 @@ import UserControl from "./UserControl";
 import SelectedItem from "./SelectedItem";
 import Btn from "./Btn";
 
-export default function ListUser({ database, selected, onClicked, onWatch }) {
+export default function ListUser({
+    database,
+    selected,
+    onClicked,
+    onDeleted,
+    onWatch,
+}) {
     const [showBtn, setShowBtn] = useState(false);
 
     return (
@@ -17,7 +23,14 @@ export default function ListUser({ database, selected, onClicked, onWatch }) {
                         onSetShowBtn={() => setShowBtn(!showBtn)}
                     />
                     {!showBtn ? <UserControl database={database} /> : ""}
-                    {!showBtn ? <ListItemUser database={database} /> : ""}
+                    {!showBtn ? (
+                        <ListItemUser
+                            database={database}
+                            onDeleted={(id) => onDeleted(id)}
+                        />
+                    ) : (
+                        ""
+                    )}
                 </>
             ) : (
                 <>

@@ -1,6 +1,6 @@
 import ItemUser from "./ItemUser";
 
-export default function ListItemUser({ database }) {
+export default function ListItemUser({ database, onDeleted }) {
     return database.map((el) => {
         return (
             <ItemUser
@@ -10,6 +10,7 @@ export default function ListItemUser({ database }) {
                 imdbRating={el.imdbRating}
                 time={el.Runtime}
                 key={el.imdbID}
+                onDeleted={() => onDeleted(el.imdbID)}
             />
         );
     });
