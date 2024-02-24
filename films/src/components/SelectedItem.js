@@ -49,6 +49,15 @@ export default function SelectedItem({ id, onWatch, onClicked, database }) {
         [id]
     );
 
+    useEffect(
+        function () {
+            if (!title) return;
+            document.title = `Film | ${title}`;
+            return () => (document.title = "Mopanofilms");
+        },
+        [title]
+    );
+
     return (
         <div className="selected-wrapper">
             {isLoad ? (
