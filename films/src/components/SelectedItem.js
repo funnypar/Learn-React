@@ -51,6 +51,19 @@ export default function SelectedItem({ id, onWatch, onClicked, database }) {
 
     useEffect(
         function () {
+            function callback(e) {
+                if (e.code === "Escape") {
+                    onClicked();
+                }
+            }
+            document.addEventListener("keydown", callback);
+            return () => document.removeEventListener("keydown", callback);
+        },
+        [onClicked]
+    );
+
+    useEffect(
+        function () {
             if (!title) return;
             document.title = `Film | ${title}`;
             return () => (document.title = "Mopanofilms");
