@@ -1,18 +1,77 @@
-@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anta&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap");
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 .App {
-    background-image: linear-gradient(
-        45deg,
-        hsl(215deg 100% 20%) 0%,
-        hsl(228deg 40% 18%) 50%,
-        hsl(0deg 0% 10%) 100%
+    background: hsla(148, 89%, 78%, 1);
+
+    background: linear-gradient(
+        90deg,
+        hsla(148, 89%, 78%, 1) 0%,
+        hsla(210, 94%, 82%, 1) 100%
     );
+
+    background: -moz-linear-gradient(
+        90deg,
+        hsla(148, 89%, 78%, 1) 0%,
+        hsla(210, 94%, 82%, 1) 100%
+    );
+
+    background: -webkit-linear-gradient(
+        90deg,
+        hsla(148, 89%, 78%, 1) 0%,
+        hsla(210, 94%, 82%, 1) 100%
+    );
+
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#95F9C3", endColorstr="#A4D0FC", GradientType=1 );
     height: 100vh;
+    display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Rock Salt", cursive;
+    flex-direction: column;
+    gap: 2rem;
+    font-family: "Anta", sans-serif;
+}
+/* ------------------------------------------- Box -------------------------------- */
+.box {
+    background: rgba(255, 255, 255, 0.53);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(11.6px);
+    -webkit-backdrop-filter: blur(11.6px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+.box div {
+    display: flex;
+    gap: 1rem;
+}
+svg {
+    color: black;
+    width: 1.5rem;
+    height: 2rem;
+}
+input {
+    border-radius: 1rem;
+    border: none;
+    padding: 0.25rem 0.75rem;
+}
+select {
+    border: none;
+    background-color: gray;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    color: white;
+}
+h3 {
+    font-family: "Kode Mono", monospace;
 }
