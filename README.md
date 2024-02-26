@@ -19,5 +19,9 @@ In this repo i want to learn React from Jonas Schmedtmann's course 👑
 7. Next , i want to create a Project, and doing some practice in React (dayCounter) 👣
 
 8. In the next part , i want to create a Project, and doing some practice and learn about some logics in React (accordion) 🪧
+
+9. Do you want to know that, how much tips can you pay in 🍔 Restaurant ? So check "tip" project out 🍟
+
+10. I have solved my problem with owes 🙈 check "owe" project and enjoy of that 🐭
    
                     So let's do it now 🤠 
