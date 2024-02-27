@@ -75,3 +75,20 @@ select {
 h3 {
     font-family: "Kode Mono", monospace;
 }
+/* -------------------------- Responsive ----------------------- */
+@media screen and (max-width: 375px) {
+    .App {
+        gap: 1rem;
+    }
+    .box {
+        padding: 1rem;
+    }
+    .box div {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    select {
+        width: 30%;
+    }
+}
