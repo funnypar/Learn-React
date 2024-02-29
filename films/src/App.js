@@ -12,12 +12,17 @@ function App() {
     const [err, setErr] = useState("");
     const [query, setQuery] = useState("");
     const [itemSelected, setItemSelected] = useState(null);
-    const [WatchedDATABASE, setWatchedDATABASE] = useState([]);
+    const [WatchedDATABASE, setWatchedDATABASE] = useState(() =>
+        JSON.parse(localStorage.getItem("watched"))
+    );
 
     function onDeletedHandler(id) {
         setWatchedDATABASE(WatchedDATABASE.filter((el) => el.imdbID !== id));
     }
-
+    useEffect(
+        () => localStorage.setItem("watched", JSON.stringify(WatchedDATABASE)),
+        [WatchedDATABASE]
+    );
     useEffect(
         function () {
             const controller = new AbortController();
