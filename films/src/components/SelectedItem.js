@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Star from "./Star";
 import Loader from "./Loader";
+import { useKey } from "./useKey";
 
 const KEY = "2dfd8a66";
 
@@ -49,18 +50,7 @@ export default function SelectedItem({ id, onWatch, onClicked, database }) {
         [id]
     );
 
-    useEffect(
-        function () {
-            function callback(e) {
-                if (e.code === "Escape") {
-                    onClicked();
-                }
-            }
-            document.addEventListener("keydown", callback);
-            return () => document.removeEventListener("keydown", callback);
-        },
-        [onClicked]
-    );
+    useKey("Escape", onClicked);
 
     useEffect(
         function () {
