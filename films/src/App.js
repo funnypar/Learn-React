@@ -1,26 +1,21 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import ListFilm from "./components/ListFilm";
 import ListUser from "./components/ListUser";
 import Nav from "./components/Nav";
 import { useFilms } from "./components/useFilms";
+import { useLocalStorageState } from "./components/useLocalStorageState";
 
 function App() {
     const [query, setQuery] = useState("");
     const [itemSelected, setItemSelected] = useState(null);
-    const [WatchedDATABASE, setWatchedDATABASE] = useState(() =>
-        JSON.parse(localStorage.getItem("watched"))
-    );
+    const [WatchedDATABASE, setWatchedDATABASE] =
+        useLocalStorageState("watched");
     const { DATABASE, isLoad, err } = useFilms(query);
 
     function onDeletedHandler(id) {
         setWatchedDATABASE(WatchedDATABASE.filter((el) => el.imdbID !== id));
     }
-
-    useEffect(
-        () => localStorage.setItem("watched", JSON.stringify(WatchedDATABASE)),
-        [WatchedDATABASE]
-    );
 
     return (
         <div className="App">
