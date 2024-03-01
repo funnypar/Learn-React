@@ -3,56 +3,23 @@ import "./App.css";
 import ListFilm from "./components/ListFilm";
 import ListUser from "./components/ListUser";
 import Nav from "./components/Nav";
-
-const KEY = "2dfd8a66";
+import { useFilms } from "./components/useFilms";
 
 function App() {
-    const [DATABASE, setDATBASE] = useState([]);
-    const [isLoad, setIsLoad] = useState(false);
-    const [err, setErr] = useState("");
     const [query, setQuery] = useState("");
     const [itemSelected, setItemSelected] = useState(null);
     const [WatchedDATABASE, setWatchedDATABASE] = useState(() =>
         JSON.parse(localStorage.getItem("watched"))
     );
+    const { DATABASE, isLoad, err } = useFilms(query);
 
     function onDeletedHandler(id) {
         setWatchedDATABASE(WatchedDATABASE.filter((el) => el.imdbID !== id));
     }
+
     useEffect(
         () => localStorage.setItem("watched", JSON.stringify(WatchedDATABASE)),
         [WatchedDATABASE]
-    );
-    useEffect(
-        function () {
-            const controller = new AbortController();
-            async function fetchData() {
-                try {
-                    setErr("");
-                    setIsLoad(true);
-                    if (!query) throw new Error("🎥 Search for a movie");
-                    const req = await fetch(
-                        `http://www.omdbapi.com/?apikey=${KEY}&s=${query}`,
-                        { signal: controller.signal }
-                    );
-                    const data = await req.json();
-                    if (data.Response === "False")
-                        throw new Error("🥹 Something went wrong...");
-                    setDATBASE(data.Search);
-                    setIsLoad(false);
-                    setErr("");
-                } catch (err) {
-                    if (err.name !== "AbortError") {
-                        console.log(err.message);
-                        setErr(err.message);
-                    }
-                }
-            }
-            fetchData();
-
-            return () => controller.abort();
-        },
-        [query]
     );
 
     return (
