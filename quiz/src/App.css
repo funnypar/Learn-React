@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 * {
     padding: 0;
     margin: 0;
@@ -11,6 +12,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 /* ---------------------------------------------- Header ------------------------------------- */
@@ -34,4 +37,25 @@ h1 {
     font-family: "Kode Mono", monospace;
     color: white;
     font-size: 3.5rem;
+}
+/* --------------------------------------------------- Bar --------------------------------- */
+.bar {
+    width: 30%;
+    color: white;
+    font-family: "Quicksand", sans-serif;
+}
+.bar input {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    background-color: #064c97;
+    border-radius: 2rem;
+    border: none;
+}
+
+.bar-infos {
+    justify-content: space-between;
+    display: flex;
+    font-size: small;
 }
