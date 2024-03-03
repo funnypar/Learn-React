@@ -4,6 +4,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
 }
 
 .App {
@@ -13,7 +14,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
+    color: white;
 }
 
 /* ---------------------------------------------- Header ------------------------------------- */
@@ -35,13 +37,11 @@ img:hover {
 }
 h1 {
     font-family: "Kode Mono", monospace;
-    color: white;
     font-size: 3.5rem;
 }
 /* --------------------------------------------------- Bar --------------------------------- */
 .bar {
-    width: 30%;
-    color: white;
+    width: 40%;
     font-family: "Quicksand", sans-serif;
 }
 .bar input {
@@ -52,10 +52,45 @@ h1 {
     background-color: #064c97;
     border-radius: 2rem;
     border: none;
+    height: 0.75rem;
 }
-
 .bar-infos {
     justify-content: space-between;
     display: flex;
     font-size: small;
+}
+/* ------------------------------------------------ Questions -----------------------------*/
+.questions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 40%;
+}
+.questions h3 {
+    font-size: large;
+}
+.questions ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.questions li {
+    list-style: none;
+    background: rgb(35, 59, 59);
+    border-radius: 2rem;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 600;
+}
+.questions li:hover {
+    transform: scale(1.03);
+}
+.time {
+    border: 1px solid gray;
+    padding: 0.5rem 0.75rem;
+    width: 15%;
+    border-radius: 2rem;
+    text-align: center;
+    cursor: default;
 }
