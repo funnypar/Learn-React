@@ -1,12 +1,11 @@
-export default function Question() {
+export default function Question({ question }) {
     return (
         <div className="question">
-            <h3>Who is the best player in the history? </h3>
+            <h3>{question.question} </h3>
             <ul>
-                <li>Ronaldo</li>
-                <li>Messi</li>
-                <li>Maradona</li>
-                <li>Pele</li>
+                {question.options.map((el, index) => (
+                    <li key={index}>{el}</li>
+                ))}
             </ul>
         </div>
     );

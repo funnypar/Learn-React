@@ -3,7 +3,8 @@ import "./App.css";
 import Header from "./components/Header";
 import Loader from "./components/Loader";
 import Ready from "./components/Ready";
-import { Error } from "./components/Error";
+import Error from "./components/Error";
+import Questions from "./components/Questions";
 
 const initialState = { question: [], status: "loading" };
 function reducer(state, action) {
@@ -12,6 +13,8 @@ function reducer(state, action) {
             return { ...state, status: "error", message: action.payload };
         case "ok":
             return { ...state, questions: action.payload, status: "ok" };
+        case "start":
+            return { ...state, status: "start" };
         default:
             throw new Error("Action unknown");
     }
@@ -38,8 +41,11 @@ function App() {
         <div className="App">
             <Header />
             {state.status === "loading" && <Loader />}
-            {state.status === "ok" && <Ready />}
+            {state.status === "ok" && <Ready dispatch={dispatch} />}
             {state.status === "error" && <Error message={state.message} />}
+            {state.status === "start" && (
+                <Questions questions={state.questions} />
+            )}
         </div>
     );
 }
