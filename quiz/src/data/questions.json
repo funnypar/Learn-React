@@ -1,0 +1,94 @@
+{
+    "questions": [
+        {
+            "question": "Who is the best player in the world ?",
+            "options": ["Messi", "Ronaldo", "Maradona", "Pele"],
+            "correctOption": 1,
+            "points": 10
+        },
+        {
+            "question": "Who has the most hat tricks in football history ?",
+            "options": ["Maradona", "Ronaldo", "Pele", "Kaka"],
+            "correctOption": 2,
+            "points": 10
+        },
+        {
+            "question": "Who has the most international goals in football history ?",
+            "options": ["Ronaldo", "Ali Daei", "Figo", "Pele"],
+            "correctOption": 0,
+            "points": 10
+        },
+        {
+            "question": "Who has the most penalty goals in football history ?",
+            "options": ["Ledio Pano", "Juninho", "Ronaldo", "Messi"],
+            "correctOption": 2,
+            "points": 10
+        },
+        {
+            "question": "Who has the most assists in football history ?",
+            "options": ["Messi", "Cruyff", "Suarez", "Xavi"],
+            "correctOption": 0,
+            "points": 10
+        },
+        {
+            "question": "Who has the most clean sheets in football history ?",
+            "options": ["Dida", "Buffon", "Casillas", "De Gea"],
+            "correctOption": 1,
+            "points": 10
+        },
+        {
+            "question": "Who is the fastest player ever ?",
+            "options": ["Rüdiger", "Bale", "Robben", "Henry"],
+            "correctOption": 3,
+            "points": 10
+        },
+        {
+            "question": "Who has the most dribble player in one match ?",
+            "options": ["Pele", "Maradona", "Messi", "Ronaldo"],
+            "correctOption": 2,
+            "points": 10
+        },
+        {
+            "question": "Who has the most Champions League career ?",
+            "options": ["Modric", "Xavi", "Messi", "Ronaldo"],
+            "correctOption": 3,
+            "points": 10
+        },
+        {
+            "question": "Which team has won the most world cups in history ?",
+            "options": ["England", "Spain", "Iran", "Brazil"],
+            "correctOption": 3,
+            "points": 10
+        },
+        {
+            "question": "Who scored the most headed goals in football history ?",
+            "options": ["Messi", "Neymar", "Ronaldo", "Etto"],
+            "correctOption": 2,
+            "points": 10
+        },
+        {
+            "question": "Who has the most powerful shot in football history ?",
+            "options": ["Robben", "Heberson", "Reid", "Koeman"],
+            "correctOption": 1,
+            "points": 10
+        },
+        {
+            "question": "Who has the best curve in football history ?",
+            "options": ["Ronaldo", "Messi", "Carlos", "Robben"],
+            "correctOption": 2,
+            "points": 10
+        },
+        {
+            "question": "who has the most red cards in football history ?",
+            "options": ["Bedoya", "Pepe", "Ramos", "Gattuso"],
+            "correctOption": 0,
+            "points": 10
+        },
+        {
+            "question": "Who was the best referee in football history ?",
+            "options": ["Pitana", "Geiger", "Faghani", "Collina"],
+            "correctOption": 3,
+            "points": 10
+        }
+    ]
+}
