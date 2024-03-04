@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Micro+5&display=swap");
 * {
     padding: 0;
     margin: 0;
@@ -99,4 +100,75 @@ h1 {
     border-radius: 2rem;
     text-align: center;
     cursor: default;
+}
+/* ------------------------------------------- Loader ------------------------------- */
+.loader {
+    width: 60px;
+    aspect-ratio: 4;
+    --c: #000 90%, #0000;
+    background: radial-gradient(
+            circle closest-side at left 6px top 50%,
+            var(--c)
+        ),
+        radial-gradient(circle closest-side, var(--c)),
+        radial-gradient(circle closest-side at right 6px top 50%, var(--c));
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    animation: l4 1s infinite alternate;
+}
+@keyframes l4 {
+    to {
+        width: 25px;
+        aspect-ratio: 1;
+    }
+}
+/* ----------------------------------------- Ready ------------------------------------------*/
+.ready {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 40%;
+}
+.ready div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+.ready h2 {
+    font-size: 3rem;
+    font-family: "Micro 5", sans-serif;
+}
+.ready h3 {
+    font-size: 1rem;
+}
+.ready button {
+    color: white;
+    background-color: transparent;
+    border: none;
+    outline: 2px solid gray;
+    padding: 0.5rem 0.75rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s;
+    font-weight: 600;
+}
+.ready button:hover {
+    transform: scale(1.1);
+    background-color: #131e29;
+}
+/* ---------------------------------------- Error ---------------------------------------- */
+.error {
+    display: flex;
+    justify-content: center;
+}
+.error h2 {
+    font-size: 1.2rem;
+    border: 2px solid orangered;
+    padding: 0.75rem 2rem;
+    border-radius: 2rem;
+    color: white;
+    background-color: darkslategrey;
 }
