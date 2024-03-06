@@ -6,7 +6,13 @@ import Ready from "./components/Ready";
 import Error from "./components/Error";
 import Questions from "./components/Questions";
 
-const initialState = { question: [], status: "loading" };
+const initialState = {
+    question: [],
+    status: "loading",
+    index: 0,
+    score: 0,
+    answer: null,
+};
 function reducer(state, action) {
     switch (action.type) {
         case "error":
@@ -15,6 +21,19 @@ function reducer(state, action) {
             return { ...state, questions: action.payload, status: "ok" };
         case "start":
             return { ...state, status: "start" };
+        case "next":
+            return { ...state, index: action.payload, answer: null };
+        case "newAnswer":
+            const lastScore = state.score;
+            return {
+                ...state,
+                answer: action.payload,
+                score:
+                    action.payload ===
+                    state.questions[state.index].correctOption
+                        ? lastScore + 10
+                        : lastScore,
+            };
         default:
             throw new Error("Action unknown");
     }
@@ -44,7 +63,12 @@ function App() {
             {state.status === "ok" && <Ready dispatch={dispatch} />}
             {state.status === "error" && <Error message={state.message} />}
             {state.status === "start" && (
-                <Questions questions={state.questions} />
+                <Questions
+                    questions={state.questions}
+                    index={state.index}
+                    dispatch={dispatch}
+                    answer={state.answer}
+                />
             )}
         </div>
     );
