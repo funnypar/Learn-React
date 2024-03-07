@@ -68,6 +68,7 @@ function App() {
                     index={state.index}
                     dispatch={dispatch}
                     answer={state.answer}
+                    score={state.score}
                 />
             )}
         </div>

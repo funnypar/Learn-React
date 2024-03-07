@@ -48,20 +48,19 @@ h1 {
     font-family: "Quicksand", sans-serif;
     margin-bottom: 2rem;
 }
-.bar input {
+progress {
     width: 100%;
-    -webkit-appearance: none;
     appearance: none;
     outline: none;
-    background-color: #064c97;
     border-radius: 2rem;
     border: none;
-    height: 0.75rem;
+    height: 0.65rem;
 }
 .bar-infos {
     justify-content: space-between;
     display: flex;
     font-size: small;
+    font-weight: 700;
 }
 /* ------------------------------------------------ Questions -----------------------------*/
 .questions {
