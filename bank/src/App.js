@@ -26,6 +26,25 @@ function reducer(state, action) {
                 balance: state.balance + state.value,
                 value: "",
             };
+        case "reqLoan":
+            return {
+                ...state,
+                balance: state.balance + 5000,
+                loan: 5000,
+                isLoan: false,
+            };
+
+        case "payLoan":
+            return {
+                ...state,
+                balance:
+                    state.balance >= 5000
+                        ? state.balance - 5000
+                        : state.balance,
+                isLoan: true,
+            };
+        case "close":
+            return { ...initialState, status: "ready" };
         default:
             return "Action Unknown";
     }
