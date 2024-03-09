@@ -46,6 +46,7 @@ function reducer(state, action) {
                         ? state.balance - 5000
                         : state.balance,
                 isLoan: true,
+                loan: 0,
             };
         case "close":
             return { ...initialState, status: "ready" };
