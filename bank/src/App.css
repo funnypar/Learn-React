@@ -49,10 +49,6 @@ h1 {
     font-weight: 700;
     font-size: 1rem;
     outline: none;
-    transition: all 3s;
-}
-.ready-btn:hover {
-    outline: 20rem solid #0f0f0f;
 }
 /* ------------------------------------------- Balance -------------------------------- */
 .balance {
@@ -141,4 +137,42 @@ h1 {
     color: white;
     font-size: 0.9rem;
     font-family: "Libre Franklin", sans-serif;
+}
+/* ----------------------------------------- active -------------------------------- */
+.active {
+    animation: active 1s linear;
+    outline: 20rem solid #0f0f0f;
+}
+.disable {
+    animation: disable 1s linear;
+    outline: none;
+}
+
+@keyframes active {
+    0% {
+        outline: 0rem solid #0f0f0f;
+    }
+    25% {
+        outline: 10rem solid #0f0f0f;
+    }
+    50% {
+        outline: 15rem solid #0f0f0f;
+    }
+    100% {
+        outline: 20rem solid #0f0f0f;
+    }
+}
+@keyframes disable {
+    0% {
+        outline: 20rem solid #0f0f0f;
+    }
+    25% {
+        outline: 15rem solid #0f0f0f;
+    }
+    50% {
+        outline: 10rem solid #0f0f0f;
+    }
+    100% {
+        outline: 0rem solid #0f0f0f;
+    }
 }

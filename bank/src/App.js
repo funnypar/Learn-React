@@ -2,11 +2,15 @@ import { useReducer } from "react";
 import "./App.css";
 import Box from "./components/Box";
 
-const initialState = { status: "ready", balance: 0, loan: 0 };
+const initialState = { status: "ready", balance: 0, loan: 0, content: "" };
 function reducer(state, action) {
     switch (action.type) {
         case "ready":
             return { ...state };
+        case "mouseEnter":
+            return { ...state, content: "active" };
+        case "mouseOut":
+            return { ...state, content: "disable" };
         case "start":
             return { ...state, status: "start", balance: 500 };
         case "value":

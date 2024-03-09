@@ -7,8 +7,10 @@ export default function Box({ status, dispatch, state }) {
         <div className="box">
             {status === "ready" ? (
                 <button
-                    className="ready-btn"
+                    className={`ready-btn ${state.content}`}
                     onClick={() => dispatch({ type: "start" })}
+                    onMouseEnter={() => dispatch({ type: "mouseEnter" })}
+                    onMouseLeave={() => dispatch({ type: "mouseOut" })}
                 >
                     Open Account
                 </button>
