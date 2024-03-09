@@ -9,6 +9,23 @@ function reducer(state, action) {
             return { ...state };
         case "start":
             return { ...state, status: "start", balance: 500 };
+        case "value":
+            return { ...state, value: action.payload };
+        case "withdraw":
+            return {
+                ...state,
+                balance:
+                    state.value < state.balance
+                        ? state.balance - state.value
+                        : state.balance,
+                value: "",
+            };
+        case "deposit":
+            return {
+                ...state,
+                balance: state.balance + state.value,
+                value: "",
+            };
         default:
             return "Action Unknown";
     }

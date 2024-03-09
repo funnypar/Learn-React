@@ -28,8 +28,9 @@ h1 {
 }
 .box {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    flex-direction: column;
     height: 55%;
     width: 50%;
     overflow: hidden;
@@ -38,7 +39,7 @@ h1 {
     box-shadow: 22px 22px 47px #e0e0e0, -22px -22px 47px #ffffff;
     padding: 1.5rem;
 }
-.box button {
+.ready-btn {
     border: none;
     padding: 1rem 1.5rem;
     border-radius: 1rem;
@@ -50,7 +51,7 @@ h1 {
     outline: none;
     transition: all 3s;
 }
-.box button:hover {
+.ready-btn:hover {
     outline: 20rem solid #0f0f0f;
 }
 /* ------------------------------------------- Balance -------------------------------- */
@@ -67,5 +68,52 @@ h1 {
     font-weight: 600;
     font-size: 0.9rem;
     font-family: "Libre Franklin", sans-serif;
-    align-self: flex-start;
+}
+/* ----------------------------------------- Actions ----------------------------------- */
+.actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 90%;
+    background-color: #36454f;
+    color: white;
+    font-size: 0.9rem;
+    font-family: "Libre Franklin", sans-serif;
+    gap: 1rem;
+}
+.btn {
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    background-color: gray;
+    color: wheat;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 1s;
+}
+.btn:hover {
+    background-color: #ffcc00;
+    color: #0f0f0f;
+}
+.actions input {
+    width: 30%;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+    transition: all 1s;
+}
+.actions input:focus {
+    width: 40%;
+    padding: 0.5rem 1rem;
+    box-shadow: 1px 1px 10px #e0e0e0;
+    outline: none;
+    font-weight: 700;
+}
+.actions div {
+    display: flex;
+    gap: 1rem;
 }
