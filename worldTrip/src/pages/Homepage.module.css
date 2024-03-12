@@ -1,0 +1,6 @@
+.wrapper {
+    height: 100vh;
+    padding: 1rem;
+    background-image: url("/media/trip.jpg");
+    background-position: center;
+}
