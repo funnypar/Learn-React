@@ -1,5 +1,6 @@
 import styles from "./Homepage.module.css";
 import Nav from "../components/Nav";
+import { Link } from "react-router-dom";
 
 export default function Homepage() {
     return (
@@ -18,7 +19,9 @@ export default function Homepage() {
                         the world.
                     </p>
                 </div>
-                <button className={styles.btn}>Start tracking now</button>
+                <Link to="/login" className={styles.btn}>
+                    Start tracking now
+                </Link>
             </div>
         </div>
     );

@@ -1,0 +1,33 @@
+.wrapper {
+    height: 100vh;
+    padding: 1rem;
+    background: #db8128;
+    background: linear-gradient(135deg, #db8128, #922a64);
+}
+.wrapper div img {
+    height: 20rem;
+    border-radius: 50px;
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+.parts {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    display: flex;
+    gap: 5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.infos {
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.infos h3 {
+    font-size: 3rem;
+    text-transform: uppercase;
+}
