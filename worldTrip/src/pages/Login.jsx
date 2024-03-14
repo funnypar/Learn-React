@@ -1,20 +1,37 @@
+import { Link } from "react-router-dom";
 import styles from "./Login.module.css";
 import Nav from "../components/Nav";
+import { useState } from "react";
 
 export default function Login() {
+    const [email, setEmail] = useState("");
+    const [pass, setPass] = useState("");
+
     return (
         <div className={styles.wrapper}>
             <Nav />
             <form>
                 <div>
-                    <label>Email :</label>
-                    <input type="email" required />
+                    <label htmlFor="email">Email :</label>
+                    <input
+                        type="email"
+                        onChange={(e) => setEmail(e.target.value)}
+                        id="email"
+                        value={email}
+                        required
+                    />
                 </div>
                 <div>
-                    <label>Password :</label>
-                    <input type="password" required />
+                    <label htmlFor="password">Password :</label>
+                    <input
+                        type="password"
+                        onChange={(e) => setPass(e.target.value)}
+                        id="password"
+                        value={pass}
+                        required
+                    />
                 </div>
-                <button type="submit">Login</button>
+                <Link to="/app">Login</Link>
             </form>
         </div>
     );

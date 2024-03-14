@@ -1,0 +1,27 @@
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+.leftSide {
+    height: 100%;
+    width: 40%;
+    padding: 2rem;
+    background-color: #1f1a2a;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 1rem 1rem 0;
+}
+.leftSide img {
+    height: 3rem;
+}
+.leftSide p {
+    font-size: 0.9rem;
+    color: gray;
+}
+.rightSide {
+    height: 100%;
+    width: 60%;
+}

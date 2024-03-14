@@ -9,9 +9,9 @@ export default function Nav() {
             <ul>
                 <NavLink to="/product">PRODUCT</NavLink>
                 <NavLink to="/pricing">PRICING</NavLink>
-                <NavLink to="/login" className={styles.login}>
+                <Link to="/login" className={styles.login}>
                     LOGIN
-                </NavLink>
+                </Link>
             </ul>
         </nav>
     );
