@@ -8,6 +8,7 @@ import Pagenotfound from "./pages/Pagenotfound";
 import Main from "./pages/Main";
 import CityList from "./components/CityList";
 import { useState, useEffect } from "react";
+import CountryList from "./components/CountryList";
 
 const URL = "http://localhost:9000";
 
@@ -50,7 +51,15 @@ function App() {
                             <CityList cities={cities} isLoading={isLoading} />
                         }
                     />
-                    <Route path="countries" element={<p>countries</p>} />
+                    <Route
+                        path="countries"
+                        element={
+                            <CountryList
+                                cities={cities}
+                                isLoading={isLoading}
+                            />
+                        }
+                    />
                 </Route>
                 <Route path="*" element={<Pagenotfound />} />
             </Routes>

@@ -10,7 +10,7 @@
     background-color: #1f1a2a;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     border-radius: 0 1rem 1rem 0;
 }

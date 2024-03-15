@@ -1,0 +1,30 @@
+.country {
+    background-color: grey;
+    height: 60%;
+    border-radius: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+    position: relative;
+    overflow: hidden;
+    width: 40%;
+}
+.country::before {
+    content: "";
+    height: 100%;
+    background-color: #ea3a36;
+    width: 0.35rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.country p {
+    color: black;
+    font-size: 1rem;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
