@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import styles from "./Country.module.css";
 
-export default function City({ data }) {
+export default function Country({ data }) {
     return (
         <div className={styles.country}>
             <p>{data.emoji}</p>
