@@ -29,15 +29,3 @@
     display: flex;
     gap: 0.5rem;
 }
-.city button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 1.2rem;
-    width: 1.2rem;
-    border-radius: 50%;
-    background-color: rgb(17, 17, 17);
-    color: white;
-    border: none;
-    cursor: pointer;
-}

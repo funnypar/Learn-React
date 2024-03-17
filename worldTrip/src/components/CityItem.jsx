@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import styles from "./CityItem.module.css";
+import Btn from "./Btn";
 
 export default function CityItem({ data }) {
     function dateFormat(date) {
@@ -20,7 +21,7 @@ export default function CityItem({ data }) {
                     <span>{data.emoji}</span> {data.cityName}
                 </p>
                 <p className={styles.date}>{dateFormat(data.date)}</p>
-                <button>&times;</button>
+                <Btn type="city">&times;</Btn>
             </div>
         </Link>
     );

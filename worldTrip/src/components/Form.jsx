@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom";
+import Btn from "./Btn";
 import styles from "./Form.module.css";
 
 export default function Form() {
+    const navigate = useNavigate();
     return (
         <form className={styles.form}>
             <div>
@@ -16,8 +19,16 @@ export default function Form() {
                 <textarea id="text" cols="30" rows="3"></textarea>
             </div>
             <div>
-                <button>Add</button>
-                <button>&larr; Back</button>
+                <Btn type="add">Add</Btn>
+                <Btn
+                    type="back"
+                    onClicked={(e) => {
+                        e.preventDefault();
+                        navigate(-1);
+                    }}
+                >
+                    &larr; Back
+                </Btn>
             </div>
         </form>
     );

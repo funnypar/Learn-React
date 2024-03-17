@@ -1,0 +1,25 @@
+.btn {
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    text-decoration: none;
+}
+.city {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%;
+    background-color: rgb(17, 17, 17);
+    color: white;
+}
+.add {
+    padding: 0.25rem 0.5rem;
+    background-color: greenyellow;
+}
+.back {
+    padding: 0.25rem 0.5rem;
+    background-color: tomato;
+}
