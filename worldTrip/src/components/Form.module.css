@@ -33,3 +33,11 @@ textarea:focus {
 textarea {
     font-size: small;
 }
+.city {
+    position: relative;
+}
+.form div p {
+    position: absolute;
+    right: 1rem;
+    top: 2rem;
+}
