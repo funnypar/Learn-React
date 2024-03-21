@@ -29,3 +29,6 @@
     display: flex;
     gap: 0.5rem;
 }
+.activeCity {
+    outline: 3px solid #ea3a36;
+}
