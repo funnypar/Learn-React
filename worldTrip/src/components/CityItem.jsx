@@ -6,7 +6,6 @@ import { useCities } from "../contexts/CitiesProvider";
 
 export default function CityItem({ data }) {
     const { currentCity } = useCities();
-    console.log(data.id, currentCity.id);
     function dateFormat(date) {
         return new Intl.DateTimeFormat("en", {
             day: "numeric",
