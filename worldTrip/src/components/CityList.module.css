@@ -3,5 +3,6 @@
     flex-direction: column;
     gap: 0.5rem;
     width: 90%;
-    margin-top: -6rem;
+    overflow: scroll;
+    height: 50%;
 }
