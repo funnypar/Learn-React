@@ -5,7 +5,7 @@ import Btn from "./Btn";
 import { useCities } from "../contexts/CitiesProvider";
 
 export default function CityItem({ data }) {
-    const { currentCity } = useCities();
+    const { currentCity, deleteCity } = useCities();
     function dateFormat(date) {
         return new Intl.DateTimeFormat("en", {
             day: "numeric",
@@ -27,7 +27,15 @@ export default function CityItem({ data }) {
                     <span>{data.emoji}</span> {data.cityName}
                 </p>
                 <p className={styles.date}>{dateFormat(data.date)}</p>
-                <Btn type="city">&times;</Btn>
+                <Btn
+                    type="city"
+                    onClicked={(e) => {
+                        e.preventDefault();
+                        deleteCity(data.id);
+                    }}
+                >
+                    &times;
+                </Btn>
             </div>
         </Link>
     );
