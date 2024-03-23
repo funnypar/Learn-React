@@ -60,7 +60,6 @@ function CitiesProvider({ children }) {
                 dispatch({ type: "loading" });
                 const req = await fetch(`${URL}/cities`);
                 const data = await req.json();
-                console.log(data);
                 dispatch({ type: "cities/loaded", payload: data });
             } catch (err) {
                 dispatch({ type: "error", payload: err.message });

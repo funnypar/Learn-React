@@ -34,17 +34,3 @@
 .wrapper form input:focus {
     outline: 3px solid #76563d;
 }
-.wrapper form a {
-    margin-top: 0.5rem;
-    border: none;
-    border-radius: 0.5rem;
-    padding: 0.5rem 1.5rem;
-    background-color: lightgreen;
-    cursor: pointer;
-    text-decoration: none;
-    color: #1f1a2a;
-}
-.wrapper form a button {
-    border: none;
-    width: 100%;
-}
