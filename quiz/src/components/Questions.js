@@ -1,17 +1,13 @@
 import { useEffect } from "react";
 import Question from "./Question";
 import Bar from "./Bar";
+import { useQuiz } from "../contexts/QuizProvider";
 
-export default function Questions({
-    questions,
-    index,
-    answer,
-    dispatch,
-    score,
-    seconds,
-}) {
+export default function Questions() {
+    const { questions, index, answer, dispatch, score, seconds } = useQuiz();
     let min = Math.floor(seconds / 60);
     let sec = seconds % 60;
+
     function clickHandler() {
         if (index === 14) {
             dispatch({ type: "finish" });
