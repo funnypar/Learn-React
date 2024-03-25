@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useMemo, useReducer } from "react";
 
 const authContext = createContext();
 
@@ -31,14 +31,17 @@ function AuthProvider({ children }) {
         if (email === FAKE_USER.email && password === FAKE_USER.password)
             dispatch({ type: "login", payload: FAKE_USER });
     }
+
     function logout() {
         dispatch({ type: "logout" });
     }
 
+    const values = useMemo(() => {
+        return { user, isAuthLogin, login, logout };
+    }, [user, isAuthLogin]);
+
     return (
-        <authContext.Provider value={{ user, isAuthLogin, login, logout }}>
-            {children}
-        </authContext.Provider>
+        <authContext.Provider value={values}>{children}</authContext.Provider>
     );
 }
 

@@ -23,7 +23,7 @@
     font-size: 0.85rem !important;
 }
 .city p {
-    color: black;
+    color: black !important;
     font-size: 1rem;
     font-weight: 400;
     display: flex;

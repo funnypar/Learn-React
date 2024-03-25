@@ -1,5 +1,11 @@
 /* eslint-disable react/prop-types */
-import { createContext, useContext, useEffect, useReducer } from "react";
+import {
+    createContext,
+    useContext,
+    useEffect,
+    useMemo,
+    useReducer,
+} from "react";
 
 const URL = "http://localhost:9000";
 
@@ -106,17 +112,19 @@ function CitiesProvider({ children }) {
         }
     }
 
+    const values = useMemo(() => {
+        return {
+            cities,
+            isLoading,
+            currentCity,
+            getCity,
+            createCity,
+            deleteCity,
+        };
+    }, [cities, isLoading, currentCity]);
+
     return (
-        <citiesContext.Provider
-            value={{
-                cities,
-                isLoading,
-                currentCity,
-                getCity,
-                createCity,
-                deleteCity,
-            }}
-        >
+        <citiesContext.Provider value={values}>
             {children}
         </citiesContext.Provider>
     );
