@@ -1,5 +1,5 @@
 import CreateCustomer from "./features/customer/CreateCustomer";
-import Customer from "./features/customer/CreateCustomer";
+import Customer from "./features/customer/Customer";
 import AccountOperations from "./features/account/AccountOperations";
 import BalanceDisplay from "./features/account/BalanceDisplay";
 import { useSelector } from "react-redux";
@@ -9,11 +9,9 @@ function App() {
 
     return (
         <div className="wrapper">
+            <h1>🏦 The React-Redux Bank ⚛️</h1>
             {customer === "" ? (
-                <>
-                    <h1>🏦 The React-Redux Bank ⚛️</h1>
-                    <CreateCustomer />
-                </>
+                <CreateCustomer />
             ) : (
                 <>
                     <Customer />
@@ -24,5 +22,4 @@ function App() {
         </div>
     );
 }
-
 export default App;

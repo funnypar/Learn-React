@@ -20,6 +20,12 @@ h2 {
     font-size: larger;
     color: white;
 }
+h2 span {
+    color: black;
+    text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
+        #ff2d95 0px 0px 20px, #ff2d95 0px 0px 30px, #ff2d95 0px 0px 40px,
+        #ff2d95 0px 0px 50px, #ff2d95 0px 0px 75px;
+}
 input,
 select {
     margin: 0 8px;
@@ -83,4 +89,5 @@ label {
     font-size: 32px;
     min-width: 180px;
     text-align: center;
+    border-radius: 1rem;
 }
