@@ -6,21 +6,14 @@ import Loader from "./Loader";
 const AppLayout = () => {
     const navigtion = useNavigation();
     const isLoading = navigtion.state === "loading";
+
     return (
         <div className="layout">
-            {!isLoading ? (
-                <>
-                    <Header />
+            <Header />
 
-                    <main>
-                        <Outlet />
-                    </main>
+            <main>{isLoading ? <Loader /> : <Outlet />}</main>
 
-                    <CartOverview />
-                </>
-            ) : (
-                <Loader />
-            )}
+            <CartOverview />
         </div>
     );
 };
