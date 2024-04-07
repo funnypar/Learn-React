@@ -1,11 +1,7 @@
 import { useDispatch } from 'react-redux';
 import Button from '../../ui/Button';
 import { formatCurrency } from '../../utils/helpers';
-import {
-  decreaseItemQuantity,
-  deleteItem,
-  increaseItemQuantity,
-} from './cartSlice';
+import { deleteItem } from './cartSlice';
 import QuantityButton from '../../ui/QuantityButton';
 
 function CartItem({ item }) {
