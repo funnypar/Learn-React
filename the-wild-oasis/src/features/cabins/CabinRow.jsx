@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import styled from "styled-components";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { toast } from "react-hot-toast";
 import { formatCurrency } from "../../utils/helpers";
 import { deleteCabins } from "../../services/apiCabins";
 
@@ -58,11 +59,12 @@ const CabinRow = ({ cabin }) => {
     const { isLoading: isDeleting, mutate } = useMutation({
         mutationFn: deleteCabins,
         onSuccess: () => {
+            toast.success("The cabin delete successfully! ");
             queryClient.invalidateQueries({
                 queryKey: ["cabins"],
             });
         },
-        onError: (err) => console.log(err),
+        onError: (err) => toast.error(err.message),
     });
 
     return (
