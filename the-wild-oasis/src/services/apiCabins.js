@@ -11,18 +11,26 @@ export async function getCabins() {
     return data;
 }
 
-export async function createCabin(newCabin) {
-    // upload image
+export async function createEditCabin(newCabin, id) {
+    const hasImagePath = newCabin.image?.startsWith(
+        "https://ljfhafwluvbjjdsaueni.supabase.co/storage/v1/object/public/cabin-images/"
+    );
+    console.log(newCabin, hasImagePath);
     const imageName = `${Math.random()}-${newCabin.image.name}`.replaceAll(
         "/",
         ""
     );
 
-    const imagePath = `https://ljfhafwluvbjjdsaueni.supabase.co/storage/v1/object/public/cabin-images/${imageName}`;
+    const imagePath = hasImagePath
+        ? newCabin.image
+        : `https://ljfhafwluvbjjdsaueni.supabase.co/storage/v1/object/public/cabin-images/${imageName}`;
 
-    const { data, error } = await supabase
-        .from("cabins")
-        .insert([
+    // 1. Create/edit Cabin
+    let query = supabase.from("cabins");
+
+    // create
+    if (!id)
+        query = query.insert([
             {
                 name: newCabin.name,
                 "max-capacity": +newCabin.maxCapacity,
@@ -31,8 +39,23 @@ export async function createCabin(newCabin) {
                 description: newCabin.description,
                 image: imagePath,
             },
-        ])
-        .select();
+        ]);
+
+    //  Edit
+
+    if (id)
+        query = query
+            .update({
+                name: newCabin.name,
+                "max-capacity": +newCabin.maxCapacity,
+                "regular-price": +newCabin.regularPrice,
+                discount: +newCabin.discount,
+                description: newCabin.description,
+                image: imagePath,
+            })
+            .eq("id", id);
+
+    const { data, error } = await query.select().single();
     if (error) {
         console.log(error);
         throw new Error("Could not create Cabins");
