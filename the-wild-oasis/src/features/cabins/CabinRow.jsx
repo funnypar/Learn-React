@@ -6,6 +6,8 @@ import { formatCurrency } from "../../utils/helpers";
 import { deleteCabins } from "../../services/apiCabins";
 import { useState } from "react";
 import CreateCabinForm from "./CreateCabinForm";
+import { HiPencil, HiSquare2Stack, HiTrash } from "react-icons/hi2";
+import { createEditCabin } from "../../services/apiCabins";
 
 const TableRow = styled.div`
     display: grid;
@@ -59,6 +61,20 @@ const CabinRow = ({ cabin }) => {
 
     const queryClient = useQueryClient();
 
+    const { isLoading: isCreating, mutate: createCabin } = useMutation({
+        mutationFn: createEditCabin,
+        onSuccess: () => {
+            toast.success("New cabin successfully created !");
+            queryClient.invalidateQueries({
+                queryKey: ["cabins"],
+            });
+        },
+        onError: (err) => toast.error(err.message),
+    });
+    function createHandler() {
+        createCabin({ ...cabin });
+    }
+
     const { isLoading: isDeleting, mutate } = useMutation({
         mutationFn: deleteCabins,
         onSuccess: () => {
@@ -79,11 +95,14 @@ const CabinRow = ({ cabin }) => {
                 <Price>{formatCurrency(regularPrice)}</Price>
                 <Discount>{formatCurrency(discount)}</Discount>
                 <div>
+                    <button onClick={createHandler} disabled={isCreating}>
+                        <HiSquare2Stack />
+                    </button>
                     <button onClick={() => setShowForm((show) => !show)}>
-                        Edit
+                        <HiPencil />
                     </button>
                     <button onClick={() => mutate(id)} disabled={isDeleting}>
-                        Delete
+                        <HiTrash />
                     </button>
                 </div>
             </TableRow>
