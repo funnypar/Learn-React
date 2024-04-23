@@ -46,7 +46,7 @@ const Error = styled.span`
     color: var(--color-red-700);
 `;
 
-function CreateCabinForm({ cabin = {} }) {
+function CreateCabinForm({ cabin = {}, onCloseModal }) {
     const { id: editId, ...editVals } = cabin;
     const isEdit = Boolean(editId);
     const { register, handleSubmit, reset, getValues, formState } = useForm({
@@ -89,7 +89,10 @@ function CreateCabinForm({ cabin = {} }) {
     }
 
     return (
-        <Form onSubmit={handleSubmit(submitHandler)}>
+        <Form
+            onSubmit={handleSubmit(submitHandler)}
+            type={onCloseModal ? "modal" : "regular"}
+        >
             <FormRow>
                 <Label htmlFor="name">Cabin name</Label>
                 <Input
@@ -181,7 +184,11 @@ function CreateCabinForm({ cabin = {} }) {
             )}
 
             <FormRow>
-                <Button variation="secondary" type="reset">
+                <Button
+                    variation="secondary"
+                    type="reset"
+                    onClick={() => onCloseModal?.()}
+                >
                     Cancel
                 </Button>
                 <Button disabled={isWorking}>
