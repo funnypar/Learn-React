@@ -1,3 +1,5 @@
+import supabase from "../services/supabase";
+
 const { useContext, useReducer, useEffect } = require("react");
 const { createContext } = require("react");
 
@@ -84,9 +86,9 @@ function QuizProvider({ children }) {
     useEffect(function () {
         async function fetchData() {
             try {
-                const req = await fetch("http://localhost:9000/questions");
-                if (!req) throw new Error("Data is not arrived");
-                const data = await req.json();
+                let { data, error } = await supabase
+                    .from("questions")
+                    .select("*");
                 dispatch({ type: "ok", payload: data });
             } catch (err) {
                 dispatch({ type: "error", payload: err.message });
