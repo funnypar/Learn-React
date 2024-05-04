@@ -5,9 +5,9 @@ import Owe from "./components/Owe";
 
 function App() {
     const [DATABASE, setDATABASE] = useState([
-        { id: "1p", name: "sara", img: "media/sara.jpg", balance: 0 },
-        { id: "2p", name: "morgen", img: "media/morgen.jpg", balance: 0 },
-        { id: "3p", name: "nika", img: "media/nika.jpg", balance: 0 },
+        { id: "1p", name: "atashi", img: "media/atashi.webp", balance: 0 },
+        { id: "2p", name: "mat", img: "media/mat.webp", balance: 0 },
+        { id: "3p", name: "nika", img: "media/nika.webp", balance: 0 },
     ]);
     const [data, setData] = useState("");
     const [showOwe, setShowOwe] = useState(false);
